@@ -55,7 +55,6 @@ class Switch extends Component {
 		const fontPosition = classNames(ftP,{[ftpChange]:checked});
 		return(
 			<div>
-				{onChange}
 				<span onClick = {this.clickHandler} className={cls} tabIndex="0">
 					<span  
 						className={fontPosition}>
