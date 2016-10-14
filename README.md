@@ -28,7 +28,7 @@ $ npm run dev
 |---|----|---|------|
 |checked	|指定当前是否选中|	Boolean	|false
 |defaultChecked	|初始是否选中	|Boolean|	false
-|onChange	|变化时回调函数	|Function(checked:Boolean)	
+|onChange	|变化时回调函数,自定义参照demo	|Function(checked:Boolean)	
 |checkedChildren	|选中时的内容	|React| Node	
 |unCheckedChildren	|非选中时的内容	|React| Node	
 |size|	开关大小，可选值：'' small|	String	|''
