@@ -102,9 +102,9 @@
 				'div',
 				{ style: { "width": "100px", "margin": "0 auto" } },
 				_react2["default"].createElement(_src.Switch, null),
-				_react2["default"].createElement(_src.Switch, { size: 'small' }),
+				_react2["default"].createElement(_src.Switch, { checked: true, size: 'small' }),
 				_react2["default"].createElement(_src.Switch, { onChange: this.changeHandle, checkedChildren: '开', unCheckedChildren: '关' }),
-				_react2["default"].createElement(_src.Switch, { onChange: this.changeHandle, checkedChildren: 'on', unCheckedChildren: 'off' })
+				_react2["default"].createElement(_src.Switch, { checked: true, onChange: this.changeHandle, checkedChildren: 'on', unCheckedChildren: 'off' })
 			);
 		};
 	
@@ -159,6 +159,22 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
+	var propsType = {
+		prefixCls: _react2["default"].PropTypes.string,
+		disabled: _react2["default"].PropTypes.bool,
+		checkedChildren: _react2["default"].PropTypes.any,
+		unCheckedChildren: _react2["default"].PropTypes.any,
+		onChangeHandler: _react2["default"].PropTypes.func
+	};
+	var defaultProps = {
+		prefixCls: 'bee-switch',
+		checkedChildren: null,
+		unCheckedChildren: null,
+		defaultChecked: false,
+		size: '',
+		onChangeHandler: function onChangeHandler() {}
+	};
+	
 	var Switch = function (_Component) {
 		_inherits(Switch, _Component);
 	
@@ -187,7 +203,7 @@
 			this.setState({
 				checked: !checked
 			});
-			this.props.onChange(!checked);
+			this.props.onChangeHandler(!checked);
 		};
 	
 		Switch.prototype.render = function render() {
@@ -196,25 +212,24 @@
 			var _props = this.props;
 			var checkedChildren = _props.checkedChildren;
 			var unCheckedChildren = _props.unCheckedChildren;
-			var onChange = _props.onChange;
+			var onChangeHandler = _props.onChangeHandler;
 			var size = _props.size;
 			//获取checked
 	
 			var checked = this.state.checked;
 			//switch是否为checked
 			var prefixClsOrigin = this.props.prefixCls;
-			var preC = size ? prefixClsOrigin + '-checked' + '-' + size : prefixClsOrigin + '-checked';
-			var prefixCls = size ? prefixClsOrigin + '-' + size : prefixClsOrigin;
+			var preC = size ? prefixClsOrigin + '-checked-' + size : prefixClsOrigin + '-checked';
+			var prefixCls = size ? prefixClsOrigin + '-' + size : '' + prefixClsOrigin;
 			//font位置
-			var ftP = prefixCls + "-inner";
-			var ftpChange = size ? 'changePostion' + '-' + size : 'changePostion';
+			var ftP = prefixCls + '-inner';
+			var ftpChange = size ? 'changePostion-' + size : 'changePostion';
 			//根据checked判断是否添加特定的类
 			var cls = (0, _classnames2["default"])(prefixCls, (_classNames = {}, _classNames[preC] = checked, _classNames));
 			var fontPosition = (0, _classnames2["default"])(ftP, (_classNames2 = {}, _classNames2[ftpChange] = checked, _classNames2));
 			return _react2["default"].createElement(
 				'div',
 				null,
-				onChange,
 				_react2["default"].createElement(
 					'span',
 					{ onClick: this.clickHandler, className: cls, tabIndex: '0' },
@@ -231,22 +246,8 @@
 		return Switch;
 	}(_react.Component);
 	
-	Switch.propsType = {
-		prefixCls: _react2["default"].PropTypes.string,
-		disabled: _react2["default"].PropTypes.bool,
-		checkedChildren: _react2["default"].PropTypes.any,
-		unCheckedChildren: _react2["default"].PropTypes.any,
-		onChange: _react2["default"].PropTypes.func,
-		onMouseUp: _react2["default"].PropTypes.func
-	};
-	Switch.defaultProps = {
-		prefixCls: 'bee-switch',
-		checkedChildren: null,
-		unCheckedChildren: null,
-		defaultChecked: false,
-		size: '',
-		onChange: function onChange() {}
-	};
+	Switch.propsType = propsType;
+	Switch.defaultProps = defaultProps;
 	exports["default"] = Switch;
 	module.exports = exports['default'];
 
