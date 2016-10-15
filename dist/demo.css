@@ -5930,7 +5930,7 @@ $color-accent: $palette-pink-A200 !default;
   -ms-user-select: none;
   user-select: none; }
   .bee-switch:active:after, .bee-switch-small:active:after {
-    width: 20px; }
+    width: 24px; }
   .bee-switch:after, .bee-switch-small:after {
     position: absolute;
     width: 18px;
@@ -5977,7 +5977,11 @@ $color-accent: $palette-pink-A200 !default;
   background-color: #2db7f5; }
   .bee-switch-checked:after, .bee-switch-checked-small:after {
     left: 22px; }
+  .bee-switch-checked:active:after, .bee-switch-checked-small:active:after {
+    left: 16px; }
   .bee-switch-checked-small:after {
     left: 12px; }
+  .bee-switch-checked-small:active:after {
+    left: 10px; }
 
 /*# sourceMappingURL=demo.css.map */

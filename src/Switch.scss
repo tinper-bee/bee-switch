@@ -20,7 +20,7 @@
     -ms-user-select: none;
     user-select: none;
     &:active:after {
-	    width: 20px;
+	    width: 24px;
 	}
     &:after{
     	position: absolute;
@@ -76,10 +76,16 @@
     &:after {
     	left:22px;
     }
+    &:active:after {
+      left: 16px;
+    }
     &-small {
     	@extend .bee-switch-checked;
 	    &:after{
 	    	left:12px;
+	    }
+	    &:active:after {
+	      left: 10px;
 	    }
 	}
 }
