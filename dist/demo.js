@@ -64,7 +64,11 @@
 
 	'use strict';
 	
-	exports.__esModule = true;
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _src = __webpack_require__(2);
 	
@@ -90,23 +94,27 @@
 		function Demo() {
 			_classCallCheck(this, Demo);
 	
-			return _possibleConstructorReturn(this, _Component.apply(this, arguments));
+			return _possibleConstructorReturn(this, (Demo.__proto__ || Object.getPrototypeOf(Demo)).apply(this, arguments));
 		}
 	
-		Demo.prototype.changeHandle = function changeHandle(e) {
-			console.log('switch to ' + e);
-		};
-	
-		Demo.prototype.render = function render() {
-			return _react2["default"].createElement(
-				'div',
-				{ style: { "width": "100px", "margin": "0 auto" } },
-				_react2["default"].createElement(_src.Switch, null),
-				_react2["default"].createElement(_src.Switch, { checked: true, size: 'small' }),
-				_react2["default"].createElement(_src.Switch, { onChange: this.changeHandle, checkedChildren: '开', unCheckedChildren: '关' }),
-				_react2["default"].createElement(_src.Switch, { checked: true, onChange: this.changeHandle, checkedChildren: 'on', unCheckedChildren: 'off' })
-			);
-		};
+		_createClass(Demo, [{
+			key: 'changeHandle',
+			value: function changeHandle(e) {
+				console.log('switch to ' + e);
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2["default"].createElement(
+					'div',
+					{ style: { "width": "100px", "margin": "0 auto" } },
+					_react2["default"].createElement(_src.Switch, null),
+					_react2["default"].createElement(_src.Switch, { checked: true, size: 'small' }),
+					_react2["default"].createElement(_src.Switch, { onChangeHandler: this.changeHandle, checkedChildren: '开', unCheckedChildren: '关' }),
+					_react2["default"].createElement(_src.Switch, { checked: true, onChangeHandler: this.changeHandle, checkedChildren: 'on', unCheckedChildren: 'off' })
+				);
+			}
+		}]);
 	
 		return Demo;
 	}(_react.Component);
@@ -120,7 +128,9 @@
 
 	'use strict';
 	
-	exports.__esModule = true;
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 	exports.Switch = undefined;
 	
 	var _Switch2 = __webpack_require__(3);
@@ -137,7 +147,11 @@
 
 	'use strict';
 	
-	exports.__esModule = true;
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(4);
 	
@@ -153,13 +167,15 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var propsType = {
+	var propTypes = {
 		prefixCls: _react2["default"].PropTypes.string,
 		disabled: _react2["default"].PropTypes.bool,
 		checkedChildren: _react2["default"].PropTypes.any,
@@ -172,6 +188,7 @@
 		unCheckedChildren: null,
 		defaultChecked: false,
 		size: '',
+		disabled: false,
 		onChangeHandler: function onChangeHandler() {}
 	};
 	
@@ -181,7 +198,7 @@
 		function Switch(props) {
 			_classCallCheck(this, Switch);
 	
-			var _this = _possibleConstructorReturn(this, _Component.call(this, props));
+			var _this = _possibleConstructorReturn(this, (Switch.__proto__ || Object.getPrototypeOf(Switch)).call(this, props));
 	
 			var checked = false;
 			if ('checked' in _this.props) {
@@ -198,55 +215,57 @@
 		//点击switch改变状态
 	
 	
-		Switch.prototype.clickHandler = function clickHandler() {
-			var checked = this.state.checked;
-			this.setState({
-				checked: !checked
-			});
-			this.props.onChangeHandler(!checked);
-		};
+		_createClass(Switch, [{
+			key: 'clickHandler',
+			value: function clickHandler() {
+				var checked = this.state.checked;
+				this.setState({
+					checked: !checked
+				});
+				this.props.onChangeHandler(!checked);
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				var _props = this.props;
+				var checkedChildren = _props.checkedChildren;
+				var unCheckedChildren = _props.unCheckedChildren;
+				var onChangeHandler = _props.onChangeHandler;
+				var size = _props.size;
+				//获取checked
 	
-		Switch.prototype.render = function render() {
-			var _classNames, _classNames2;
-	
-			var _props = this.props;
-			var checkedChildren = _props.checkedChildren;
-			var unCheckedChildren = _props.unCheckedChildren;
-			var onChangeHandler = _props.onChangeHandler;
-			var size = _props.size;
-			//获取checked
-	
-			var checked = this.state.checked;
-			//switch是否为checked
-			var prefixClsOrigin = this.props.prefixCls;
-			var preC = size ? prefixClsOrigin + '-checked-' + size : prefixClsOrigin + '-checked';
-			var prefixCls = size ? prefixClsOrigin + '-' + size : '' + prefixClsOrigin;
-			//font位置
-			var ftP = prefixCls + '-inner';
-			var ftpChange = size ? 'changePostion-' + size : 'changePostion';
-			//根据checked判断是否添加特定的类
-			var cls = (0, _classnames2["default"])(prefixCls, (_classNames = {}, _classNames[preC] = checked, _classNames));
-			var fontPosition = (0, _classnames2["default"])(ftP, (_classNames2 = {}, _classNames2[ftpChange] = checked, _classNames2));
-			return _react2["default"].createElement(
-				'div',
-				null,
-				_react2["default"].createElement(
-					'span',
-					{ onClick: this.clickHandler, className: cls, tabIndex: '0' },
+				var checked = this.state.checked;
+				//switch是否为checked
+				var prefixClsOrigin = this.props.prefixCls;
+				var preC = size ? prefixClsOrigin + '-checked-' + size : prefixClsOrigin + '-checked';
+				var prefixCls = size ? prefixClsOrigin + '-' + size : '' + prefixClsOrigin;
+				//font位置
+				var ftP = prefixCls + '-inner';
+				var ftpChange = size ? 'changePostion-' + size : 'changePostion';
+				//根据checked判断是否添加特定的类
+				var cls = (0, _classnames2["default"])(prefixCls, _defineProperty({}, preC, checked));
+				var fontPosition = (0, _classnames2["default"])(ftP, _defineProperty({}, ftpChange, checked));
+				return _react2["default"].createElement(
+					'div',
+					null,
 					_react2["default"].createElement(
 						'span',
-						{
-							className: fontPosition },
-						checked ? checkedChildren : unCheckedChildren
+						{ onClick: this.clickHandler, className: cls, tabIndex: '0' },
+						_react2["default"].createElement(
+							'span',
+							{
+								className: fontPosition },
+							checked ? checkedChildren : unCheckedChildren
+						)
 					)
-				)
-			);
-		};
+				);
+			}
+		}]);
 	
 		return Switch;
 	}(_react.Component);
 	
-	Switch.propsType = propsType;
+	Switch.propTypes = propTypes;
 	Switch.defaultProps = defaultProps;
 	exports["default"] = Switch;
 	module.exports = exports['default'];

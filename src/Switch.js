@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import classNames from 'classnames';
-const propsType = {
+const propTypes = {
     prefixCls: React.PropTypes.string,
     disabled: React.PropTypes.bool,
     checkedChildren: React.PropTypes.any,
@@ -14,6 +14,7 @@ const defaultProps = {
 	unCheckedChildren: null,
 	defaultChecked: false,
 	size:'',
+	disabled:false,
 	onChangeHandler: function(){}
 };
 class Switch extends Component {
@@ -65,6 +66,6 @@ class Switch extends Component {
 		)
 	}
 }
-Switch.propsType = propsType;
+Switch.propTypes = propTypes;
 Switch.defaultProps = defaultProps;
 export default Switch;
