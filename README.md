@@ -8,10 +8,33 @@ react bee-switch component for tinper-bee
 
 
 
-## Usage
+## 使用
 
+### 使用单独的switch包
+#### 组件引入
+先进行下载switch包
+```
+npm install --save bee-switch
+```
+组件调用
 ```js
-
+import { Switch } from 'bee-switch';
+React.render(<div>
+    <div>
+        <Switch />
+    </div>
+</div>, document.getElementById('target'));
+```
+#### 样式引入
+- 可以使用link引入dist目录下switch.css
+```
+<link rel="stylesheet" href="./node_modules/build/bee-switch.css">
+```
+- 可以在js中import样式
+```js
+import "./node_modules/src/Switch.scss"
+//或是
+import "./node_modules/build/bee-switch.css"
 ```
 
 
