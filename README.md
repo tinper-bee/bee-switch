@@ -20,10 +20,8 @@ npm install --save bee-switch
 ```js
 import { Switch } from 'bee-switch';
 React.render(<div>
-    <div>
-        <Switch />
-    </div>
-</div>, document.getElementById('target'));
+            <Switch />
+        </div>, document.getElementById('target'));
 ```
 #### 样式引入
 - 可以使用link引入dist目录下switch.css
