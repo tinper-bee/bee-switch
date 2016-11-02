@@ -2559,6 +2559,9 @@ html {
  * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; }
 ::selection {
   background: #b3d4fc;
   text-shadow: none; }
@@ -2685,7 +2688,7 @@ textarea {
 @media only screen and (min-width: 35em) {
   /* Style adjustments for viewports that meet the condition */ }
 
-@media print, (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
+@media print, (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 1.25dppx), (min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */ }
 
 /* ==========================================================================
@@ -2796,6 +2799,9 @@ main {
 */
 *[hidden] {
   display: none !important; }
+
+*, :after, :before {
+  box-sizing: border-box; }
 
 @font-face {
   font-family: "uf";
@@ -4425,7 +4431,6 @@ $color-accent: $palette-pink-A200 !default;
 
 .text-break {
   -webkit-hyphens: auto;
-  -moz-hyphens: auto;
   -ms-hyphens: auto;
   hyphens: auto;
   word-wrap: break-word;
@@ -5923,7 +5928,6 @@ $color-accent: $palette-pink-A200 !default;
   background-color: #ccc;
   cursor: pointer;
   outline: 0;
-  -webkit-transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
   transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -5941,7 +5945,6 @@ $color-accent: $palette-pink-A200 !default;
     background-color: #fff;
     content: " ";
     cursor: pointer;
-    -webkit-transition: left 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86), width 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
     transition: left 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86), width 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86); }
   .bee-switch-small {
     height: 14px;
