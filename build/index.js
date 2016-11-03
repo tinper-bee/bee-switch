@@ -1,12 +1,14 @@
 'use strict';
 
-exports.__esModule = true;
-exports.Switch = undefined;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
-var _Switch2 = require('./Switch');
+var _Switch = require('./Switch');
 
-var _Switch3 = _interopRequireDefault(_Switch2);
+var _Switch2 = _interopRequireDefault(_Switch);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-exports.Switch = _Switch3["default"];
+exports["default"] = _Switch2["default"];
+module.exports = exports['default'];
