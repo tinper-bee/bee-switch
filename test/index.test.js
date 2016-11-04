@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow, mount, render} from 'enzyme';
 import {expect} from 'chai';
-import { Switch } from '../src/index';
+import Switch from '../src/index';
 describe('verifiy size',function(){
 	it('Switch should be exist',function(){
 		let mSwitch = mount(<Switch />);
