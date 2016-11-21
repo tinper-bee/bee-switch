@@ -1,6 +1,6 @@
 # bee-switch
 [![npm version](https://img.shields.io/npm/v/bee-switch.svg)](https://www.npmjs.com/package/bee-switch)
-[![Build Status](https://img.shields.io/travis/tinper-bee/generator-tinper-bee/master.svg)](https://travis-ci.org/tinper-bee/bee-switch)
+[![Build Status](https://img.shields.io/travis/tinper-bee/bee-switch/master.svg)](https://travis-ci.org/tinper-bee/bee-switch)
 [![Coverage Status](https://coveralls.io/repos/github/tinper-bee/bee-switch/badge.svg?branch=master)](https://coveralls.io/github/tinper-bee/bee-switch?branch=master)
 
 
