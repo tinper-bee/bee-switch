@@ -5,14 +5,25 @@ import Switch from '../src/index';
 describe('verifiy size',function(){
 	it('Switch should be exist',function(){
 		let mSwitch = mount(<Switch />);
-		expect(mSwitch.find('span').at(0).hasClass('bee-switch')).to.equal(true)
+		expect(mSwitch.find('span').at(0).hasClass('u-switch')).to.equal(true)
 	})
 })
 
-describe('verifiy small',function(){
-	it('Switch small should be exist',function(){
-		let mSwitch = mount(<Switch size="small"/>);
-		expect(mSwitch.find('span').at(0).hasClass('bee-switch-small')).to.equal(true)
+describe('verifiy size',function(){
+	it('small Switch should be exist',function(){
+		let mSwitch = mount(<Switch size="sm"/>);
+		expect(mSwitch.find('span').at(0).hasClass('u-switch-sm')).to.equal(true)
+	})
+	it('large Switch should be exist',function(){
+		let mSwitch = mount(<Switch size="lg"/>);
+		expect(mSwitch.find('span').at(0).hasClass('u-switch-lg')).to.equal(true)
+	})
+})
+
+describe('verifiy colors',function(){
+	it('primary Switch should be exist',function(){
+		let mSwitch = mount(<Switch size="primary"/>);
+		expect(mSwitch.find('span').at(0).hasClass('u-switch-primary')).to.equal(true)
 	})
 })
 

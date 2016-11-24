@@ -3,8 +3,7 @@
 [![Build Status](https://img.shields.io/travis/tinper-bee/bee-switch/master.svg)](https://travis-ci.org/tinper-bee/bee-switch)
 [![Coverage Status](https://coveralls.io/repos/github/tinper-bee/bee-switch/badge.svg?branch=master)](https://coveralls.io/github/tinper-bee/bee-switch?branch=master)
 
-
-react bee-switch component for tinper-bee
+两种状态切换的开关
 
 
 
@@ -40,12 +39,13 @@ import "./node_modules/build/bee-switch.css"
 ## API
 |参数|说明|类型|默认值|
 |---|----|---|------|
-|checked	|指定当前是否选中|	Boolean	|false
-|defaultChecked	|初始是否选中	|Boolean|	false
-|onChangeHandler	|变化时回调函数,自定义参照demo	|Function(checked:Boolean)	
-|checkedChildren	|选中时的内容	|React| Node	
+|checked	|指定当前是否选中|	Boolean	|false|
+|defaultChecked	|初始是否选中	|Boolean|	false |
+|onChangeHandler	|变化时回调函数,自定义参照demo	|Function(checked:Boolean) |	
+|checkedChildren	|选中时的内容	|React| Node |
 |unCheckedChildren	|非选中时的内容	|React| Node	
-|size|	开关大小，可选值：'' small|	String	|''
+|size|	大小设置，oneOf：`primary`,`success`,`info`,`dark`,`warning`|string|''|	
+|colors| 颜色设置，oneOf：`sm`, `lg`,''|	string	|''|
 
 #### setup develop environment
 

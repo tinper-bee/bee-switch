@@ -34,7 +34,7 @@
  },
  "dependencies": {
   "classnames": "^2.2.5",
-  "tinper-bee-core": "*"
+  "tinper-bee-core": "latest"
  },
  "devDependencies": {
   "console-polyfill": "~0.2.1",

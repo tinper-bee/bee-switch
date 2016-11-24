@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
+import React, { Component,PropTypes } from 'react'
 import ReactDOM from 'react-dom'
-import classNames from 'classnames';
+import classnames from 'classnames';
 const propTypes = {
-    prefixCls: React.PropTypes.string,
-    disabled: React.PropTypes.bool,
-    checkedChildren: React.PropTypes.any,
-    unCheckedChildren: React.PropTypes.any,
-    onChangeHandler: React.PropTypes.func
+    clsPrefix: PropTypes.string,
+    disabled: PropTypes.bool,
+    checkedChildren: PropTypes.any,
+    unCheckedChildren: PropTypes.any,
+    onChangeHandler: PropTypes.func
 };
 const defaultProps = {
-    prefixCls: 'bee-switch',
+    clsPrefix: 'u-switch',
 	checkedChildren: null,
 	unCheckedChildren: null,
 	defaultChecked: false,
@@ -41,24 +41,25 @@ class Switch extends Component {
 		this.props.onChangeHandler(!checked);
 	}
 	render(){
-		const { checkedChildren,unCheckedChildren,onChangeHandler,size } = this.props;
+		const { checkedChildren,unCheckedChildren,onChangeHandler,size,className,clsPrefix,colors } = this.props;
 		//获取checked
 		const checked = this.state.checked;
-		//switch是否为checked
-		let prefixClsOrigin = this.props.prefixCls;
-		const preC = size?`${prefixClsOrigin}-checked-${size}`:`${prefixClsOrigin}-checked`;
-		let prefixCls = size?`${prefixClsOrigin}-${size}`:`${prefixClsOrigin}`;
-		//font位置
-		const ftP = `${prefixCls}-inner`;
-		const ftpChange = size?`changePostion-${size}`:`changePostion`
-		//根据checked判断是否添加特定的类
-		const cls = classNames(prefixCls,{[preC]:checked});
-		const fontPosition = classNames(ftP,{[ftpChange]:checked});
+		let classes = {
+			'is-checked':checked
+		}
+		if(size){
+			classes[`${clsPrefix}-${size}`] = true;
+		}
+		if(colors){
+			classes[`${clsPrefix}-${colors}`] = true;
+		}
+		let classNames = classnames(clsPrefix,classes);
+
 		return(
 			<div>
-				<span onClick = {this.clickHandler} className={cls} tabIndex="0">
+				<span onClick = {this.clickHandler} className={classnames(className,classNames)} tabIndex="0">
 					<span  
-						className={fontPosition}>
+						className={`${clsPrefix}-inner`}>
 						{ checked?checkedChildren : unCheckedChildren}
 					</span>
 				</span>

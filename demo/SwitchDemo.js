@@ -9,7 +9,7 @@ class Demo extends Component {
 		return( 
 			<div style={{"width":"100px","margin":"0 auto"}}>
 				<Switch />
-				<Switch checked={true} size='small' />
+				<Switch checked={true} size='sm' />
 				<Switch onChangeHandler = {this.changeHandle} checkedChildren={'开'} unCheckedChildren={'关'} /> 
 				<Switch checked={true} onChangeHandler = {this.changeHandle} checkedChildren={'on'} unCheckedChildren={'off'} /> 
 			</div>	
