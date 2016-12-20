@@ -75,14 +75,14 @@ var Switch = function (_Component) {
 	};
 
 	Switch.prototype.render = function render() {
-		var _props = this.props;
-		var checkedChildren = _props.checkedChildren;
-		var unCheckedChildren = _props.unCheckedChildren;
-		var onChangeHandler = _props.onChangeHandler;
-		var size = _props.size;
-		var className = _props.className;
-		var clsPrefix = _props.clsPrefix;
-		var colors = _props.colors;
+		var _props = this.props,
+		    checkedChildren = _props.checkedChildren,
+		    unCheckedChildren = _props.unCheckedChildren,
+		    onChangeHandler = _props.onChangeHandler,
+		    size = _props.size,
+		    className = _props.className,
+		    clsPrefix = _props.clsPrefix,
+		    colors = _props.colors;
 		//获取checked
 
 		var checked = this.state.checked;
