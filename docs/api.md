@@ -1,18 +1,17 @@
-## Button
-按钮组件
+## Switch 开关
 
-通过点击执行一个具体的行为或动作。
+切换开关交互来源于表示用户用于打开或关闭选项的物理开关。 
 
 ## 代码演示
 
 ### API
 
 |参数|说明|类型|默认值|
-|:---|:-----|:----|:------|
-|size|按钮大小(`lg` `xg` `sm`)|string|-|
-|colors|颜色(primary/accent/success/info/warning/danger/default)|string|''|
-|shape|形状(block/round/squared/floating/pillRight/pillLeft/border/icon)|string|''|
-|disabled|是否禁用(`disabled` 或 `true` `false`)|string|false|
-|className|增加额外的class|string|''|
-|htmlType|html dom 的 type 属性(`submit` `button` `reset`)|string|button|
-|style|style 属性|object|''|
+|:---|:----|:---|:------|
+|checked	|指定当前是否选中|	Boolean	|false|
+|defaultChecked	|初始是否选中	|Boolean|	false |
+|onChangeHandler	|变化时回调函数,自定义参照demo	|Function(checked:Boolean) |
+|checkedChildren	|选中时的内容	|React| Node |
+|unCheckedChildren	|非选中时的内容	|React| Node
+|size|	大小设置，oneOf：`primary`,`success`,`info`,`dark`,`warning`|string|''|
+|colors| 颜色设置，oneOf：`sm`, `lg`,''|	string	|''|
