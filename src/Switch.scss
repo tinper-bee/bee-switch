@@ -54,7 +54,7 @@
 	      left: 16px;
 	    }
 	}
-   
+
 }
 
 .u-switch.u-switch-sm{
@@ -96,6 +96,9 @@
     	&:after{
     		left:32px;
     	}
+		&:active:after {
+		    left: 26px;
+		}
     	.u-switch-inner {
     		left:8px;
     	}
@@ -114,7 +117,7 @@
       left: 0;
     }
     &:active:after {
-      width: 16px;
+      width: 32px;
     }
 }
 

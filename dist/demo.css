@@ -7886,6 +7886,8 @@ input.u-button[type="submit"] {
   width: 60px; }
   .u-switch.u-switch-lg.is-checked:after {
     left: 32px; }
+  .u-switch.u-switch-lg.is-checked:active:after {
+    left: 26px; }
   .u-switch.u-switch-lg.is-checked .u-switch-inner {
     left: 8px; }
   .u-switch.u-switch-lg .u-switch-inner {
@@ -7900,7 +7902,7 @@ input.u-button[type="submit"] {
     top: 1px;
     left: 0; }
   .u-switch.u-switch-lg:active:after {
-    width: 16px; }
+    width: 32px; }
 
 .u-switch-primary.is-checked {
   background: rgb(63,81,181);
