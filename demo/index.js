@@ -7,9 +7,9 @@ import Button from 'bee-button';
 import Switch from '../src';
 
 
-const CARET = <i className="uf uf-chevronarrowdown"></i>;
+const CARET = <i className="uf uf-arrow-down"></i>;
 
-const CARETUP = <i className="uf uf-chevronarrowup"></i>;
+const CARETUP = <i className="uf uf-arrow-up"></i>;
 
 
 /**

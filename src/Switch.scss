@@ -1,45 +1,6 @@
 @import "../node_modules/tinper-bee-core/scss/minxin-variables";
 @import "../node_modules/tinper-bee-core/scss/minxin-mixins";
 
-/*color*/
-$switch-border-color: #ccc;
-$switch-back-color: #ccc;
-$switch-checked-borColor: #2db7f5;
-$switch-checked-backColor: #2db7f5;
-
-/* border-radius of different state switch   */
-$switch-border-radius: 20px;
-$switch-border-radius-after: 18px;
-
-/* width height line-height  of the three switches */
-$switch-width: (default:44px, small:32px, large:60px);
-$switch-height: (default:22px, small:16px, large:30px);
-$switch-lineHeight: (default:20px, small:12px, large:12px);
-
-/* style of u-switch-inner  */
-$switch-inner-fontSize: (default:12px, small:10px, large:18px);
-$switch-inner-left: (default:22px, small:16px, large:30px);
-$switch-inner-largeTop: 8px;
-
-/* style of u-switch:active:after  */
-$switch-active-width: (default:24px, small:16px, large:32px);
-
-/* style of u-switch:after  */
-$switch-after-widthHeight: 18px;
-$switch-after-widthHeight-sm: 14px;
-$switch-after-widthHeight-lg: 26px;
-$switch-after-top: 1px;
-$switch-after-top-sm: 0;
-$switch-after-top-lg: 1px;
-$switch-after-left: 0;
-$switch-after-left-sm: 0;
-$switch-after-left-lg: 0;
-
-/* style of u-switch.is-checked */
-$switch-checked-innerLeft: (default:8px, small:4px, large:8px);
-$switch-checked-afterLeft: (default:24px, small:16px, large:32px);
-$switch-checked-activeLeft: (default:16px, small:10px, large:26px);
-
 
 
 .u-switch {

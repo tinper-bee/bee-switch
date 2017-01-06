@@ -13,10 +13,10 @@
 /*  Navlayout  */
 /* gridlayout */
 /* menu */
+/* Tile */
 /* Alert */
 /* Checkbox */
 /*  Radio  */
-/* Switch  */
 /* loading */
 /* datetimepicker */
 /* message */
@@ -30,6 +30,15 @@
 /* ==========  Card  ========== */
 /* ============ Forms ============*/
 /* BADGE */
+/*两种加载的尺寸 width height*/
+/*居中位置top left*/
+/*color*/
+/* border-radius of different state switch   */
+/* width height line-height  of the three switches */
+/* style of u-switch-inner  */
+/* style of u-switch:active:after  */
+/* style of u-switch:after  */
+/* style of u-switch.is-checked */
 /* Typography */
 /* Shadows */
 /* Animations */
@@ -619,8 +628,8 @@
   line-height: 20px;
   vertical-align: middle;
   border-radius: 20px;
-  border: 1px solid #ccc;
-  background-color: #ccc;
+  border: 1px solid rgb(224,224,224);
+  background-color: rgb(224,224,224);
   cursor: pointer;
   outline: 0;
   -webkit-transition: all 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
@@ -631,8 +640,8 @@
   user-select: none; }
   .u-switch .u-switch-inner {
     color: #fff;
-    font-size: 12px;
     position: absolute;
+    font-size: 12px;
     left: 22px; }
   .u-switch:active:after {
     width: 24px; }
@@ -641,7 +650,7 @@
     width: 18px;
     height: 18px;
     top: 1px;
-    left: 0px;
+    left: 0;
     border-radius: 18px;
     background-color: #fff;
     content: " ";
@@ -649,8 +658,8 @@
     -webkit-transition: left 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86), width 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
     transition: left 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86), width 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86); }
   .u-switch.is-checked {
-    border-color: #2db7f5;
-    background-color: #2db7f5; }
+    border-color: rgb(30,136,229);
+    background-color: rgb(30,136,229); }
     .u-switch.is-checked .u-switch-inner {
       left: 8px; }
     .u-switch.is-checked:after {
@@ -659,55 +668,55 @@
       left: 16px; }
 
 .u-switch.u-switch-sm {
+  width: 32px;
   height: 16px;
-  line-height: 12px;
-  width: 32px; }
-  .u-switch.u-switch-sm.is-checked:after {
-    left: 16px; }
-  .u-switch.u-switch-sm.is-checked:active:after {
-    left: 10px; }
-  .u-switch.u-switch-sm.is-checked .u-switch-inner {
-    left: 4px; }
+  line-height: 12px; }
   .u-switch.u-switch-sm .u-switch-inner {
     color: #fff;
-    font-size: 10px;
     position: absolute;
+    font-size: 10px;
     left: 16px; }
+  .u-switch.u-switch-sm:active:after {
+    width: 16px; }
   .u-switch.u-switch-sm:after {
     width: 14px;
     height: 14px;
     top: 0;
     left: 0; }
-  .u-switch.u-switch-sm:active:after {
-    width: 16px; }
+  .u-switch.u-switch-sm.is-checked .u-switch-inner {
+    left: 4px; }
+  .u-switch.u-switch-sm.is-checked:after {
+    left: 16px; }
+  .u-switch.u-switch-sm.is-checked:active:after {
+    left: 10px; }
 
 .u-switch.u-switch-lg {
+  width: 60px;
   height: 30px;
-  line-height: 12px;
-  width: 60px; }
-  .u-switch.u-switch-lg.is-checked:after {
-    left: 32px; }
-  .u-switch.u-switch-lg.is-checked:active:after {
-    left: 26px; }
-  .u-switch.u-switch-lg.is-checked .u-switch-inner {
-    left: 8px; }
+  line-height: 12px; }
   .u-switch.u-switch-lg .u-switch-inner {
     color: #fff;
-    font-size: 18px;
     position: absolute;
+    font-size: 18px;
     left: 30px;
     top: 8px; }
+  .u-switch.u-switch-lg:active:after {
+    width: 32px; }
   .u-switch.u-switch-lg:after {
     width: 26px;
     height: 26px;
     top: 1px;
     left: 0; }
-  .u-switch.u-switch-lg:active:after {
-    width: 32px; }
+  .u-switch.u-switch-lg.is-checked .u-switch-inner {
+    left: 8px; }
+  .u-switch.u-switch-lg.is-checked:after {
+    left: 32px; }
+  .u-switch.u-switch-lg.is-checked:active:after {
+    left: 26px; }
 
 .u-switch-primary.is-checked {
-  background: rgb(63,81,181);
-  border: 1px solid rgb(63,81,181); }
+  background: rgb(30,136,229);
+  border: 1px solid rgb(30,136,229); }
 
 .u-switch-info.is-checked {
   background: rgb(0,188,212);
