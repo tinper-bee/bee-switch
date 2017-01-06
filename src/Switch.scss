@@ -1,141 +1,191 @@
 @import "../node_modules/tinper-bee-core/scss/minxin-variables";
 @import "../node_modules/tinper-bee-core/scss/minxin-mixins";
-.u-switch{
-	position: relative;
-    display: inline-block;
-    box-sizing: border-box;
-    width: 44px;
-    height: 22px;
-    line-height: 20px;
-    vertical-align: middle;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    background-color: #ccc;
+
+/*color*/
+$switch-border-color: #ccc;
+$switch-back-color: #ccc;
+$switch-checked-borColor: #2db7f5;
+$switch-checked-backColor: #2db7f5;
+
+/* border-radius of different state switch   */
+$switch-border-radius: 20px;
+$switch-border-radius-after: 18px;
+
+/* width height line-height  of the three switches */
+$switch-width: (default:44px, small:32px, large:60px);
+$switch-height: (default:22px, small:16px, large:30px);
+$switch-lineHeight: (default:20px, small:12px, large:12px);
+
+/* style of u-switch-inner  */
+$switch-inner-fontSize: (default:12px, small:10px, large:18px);
+$switch-inner-left: (default:22px, small:16px, large:30px);
+$switch-inner-largeTop: 8px;
+
+/* style of u-switch:active:after  */
+$switch-active-width: (default:24px, small:16px, large:32px);
+
+/* style of u-switch:after  */
+$switch-after-widthHeight: 18px;
+$switch-after-widthHeight-sm: 14px;
+$switch-after-widthHeight-lg: 26px;
+$switch-after-top: 1px;
+$switch-after-top-sm: 0;
+$switch-after-top-lg: 1px;
+$switch-after-left: 0;
+$switch-after-left-sm: 0;
+$switch-after-left-lg: 0;
+
+/* style of u-switch.is-checked */
+$switch-checked-innerLeft: (default:8px, small:4px, large:8px);
+$switch-checked-afterLeft: (default:24px, small:16px, large:32px);
+$switch-checked-activeLeft: (default:16px, small:10px, large:26px);
+
+
+
+.u-switch {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  width: map-get($switch-width, default);
+  height: map-get($switch-height, default);
+  line-height: map-get($switch-lineHeight, default);
+  vertical-align: middle;
+  border-radius: $switch-border-radius;
+  border: 1px solid $switch-border-color;
+  background-color: $switch-back-color;
+  cursor: pointer;
+  outline: 0;
+  -webkit-transition: all .3s cubic-bezier(.78, .14, .15, .86);
+  transition: all .3s cubic-bezier(.78, .14, .15, .86);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  .u-switch-inner {
+    color: #fff;
+    position: absolute;
+    font-size: map_get($switch-inner-fontSize, default);
+    left: map_get($switch-inner-left, default);
+  }
+  &:active:after {
+    width: map_get($switch-active-width, default);
+  }
+  &:after {
+    position: absolute;
+    width: $switch-after-widthHeight;
+    height: $switch-after-widthHeight;
+    top: $switch-after-top;
+    left: $switch-after-left;
+    border-radius: $switch-border-radius-after;
+    background-color: #fff;
+    content: " ";
     cursor: pointer;
-    outline:0;
-    -webkit-transition: all .3s cubic-bezier(.78,.14,.15,.86);
-    transition: all .3s cubic-bezier(.78,.14,.15,.86);
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    -webkit-transition: left .3s cubic-bezier(.78, .14, .15, .86), width .3s cubic-bezier(.78, .14, .15, .86);
+    transition: left .3s cubic-bezier(.78, .14, .15, .86), width .3s cubic-bezier(.78, .14, .15, .86);
+  }
+  &.is-checked {
+    border-color: $switch-checked-borColor;
+    background-color: $switch-checked-backColor;
     .u-switch-inner {
-		color: #fff;
-	    font-size: 12px;
-	    position: absolute;
-	    left: 22px;
-	}
-    &:active:after {
-	    width: 24px;
-	}
-    &:after{
-    	position: absolute;
-	    width: 18px;
-	    height: 18px;
-	    top: 1px;
-	    left:0px;
-	    border-radius: 18px;
-	    background-color: #fff;
-	    content: " ";
-	    cursor: pointer;
-	    -webkit-transition: left .3s cubic-bezier(.78,.14,.15,.86),width .3s cubic-bezier(.78,.14,.15,.86);
-	    transition: left .3s cubic-bezier(.78,.14,.15,.86),width .3s cubic-bezier(.78,.14,.15,.86);
+      left: map_get($switch-checked-innerLeft, default);
     }
-    &.is-checked{
-		border-color: #2db7f5;
-	    background-color: #2db7f5;
-	    .u-switch-inner {
-		    left: 8px;
-		}
-	    &:after {
-	    	left:24px;
-	    }
-	    &:active:after {
-	      left: 16px;
-	    }
-	}
-
-}
-
-.u-switch.u-switch-sm{
-	height: 16px;
-    line-height: 12px;
-    width: 32px;
-    &.is-checked {
-    	&:after{
-    		left:16px;
-    	}
-    	&:active:after {
-		    left: 10px;
-		}
-    	.u-switch-inner {
-    		left:4px;
-    	}
-    }
-    .u-switch-inner {
-		color: #fff;
-	    font-size: 10px;
-	    position: absolute;
-	    left: 16px;
-	}
     &:after {
-      width: 14px;
-      height: 14px;
-      top: 0;
-      left: 0;
+      left: map_get($switch-checked-afterLeft, default);
     }
     &:active:after {
-      width: 16px;
+      left: map_get($switch-checked-activeLeft, default);
     }
-}
-.u-switch.u-switch-lg{
-	height: 30px;
-    line-height: 12px;
-    width: 60px;
-    &.is-checked {
-    	&:after{
-    		left:32px;
-    	}
-		&:active:after {
-		    left: 26px;
-		}
-    	.u-switch-inner {
-    		left:8px;
-    	}
-    }
-    .u-switch-inner {
-		color: #fff;
-	    font-size: 18px;
-	    position: absolute;
-	    left: 30px;
-	    top:8px;
-	}
-    &:after {
-      width: 26px;
-      height: 26px;
-      top: 1px;
-      left: 0;
-    }
-    &:active:after {
-      width: 32px;
-    }
+  }
+
 }
 
-.u-switch-primary.is-checked{
-	@include switch-styles-variant($switch-primary-bg);
+.u-switch.u-switch-sm {
+  width: map-get($switch-width, small);
+  height: map-get($switch-height, small);
+  line-height: map-get($switch-lineHeight, small);
+  .u-switch-inner {
+    color: #fff;
+    position: absolute;
+    font-size: map_get($switch-inner-fontSize, small);
+    left: map_get($switch-inner-left, small);
+  }
+  &:active:after {
+    width: map_get($switch-active-width, small);
+  }
+
+  &:after {
+    width: $switch-after-widthHeight-sm;
+    height: $switch-after-widthHeight-sm;
+    top: $switch-after-top-sm;
+    left: $switch-after-left-sm;
+  }
+  &.is-checked {
+    .u-switch-inner {
+      left: map_get($switch-checked-innerLeft, small);
+    }
+    &:after {
+      left: map_get($switch-checked-afterLeft, small);
+    }
+    &:active:after {
+      left: map_get($switch-checked-activeLeft, small);
+    }
+  }
+
 }
-.u-switch-info.is-checked{
-	@include switch-styles-variant($switch-info-bg);
+
+.u-switch.u-switch-lg {
+  width: map-get($switch-width, large);
+  height: map-get($switch-height, large);
+  line-height: map-get($switch-lineHeight, large);
+  .u-switch-inner {
+    color: #fff;
+    position: absolute;
+    font-size: map_get($switch-inner-fontSize, large);
+    left: map_get($switch-inner-left, large);
+    top: $switch-inner-largeTop;
+  }
+  &:active:after {
+    width: map_get($switch-active-width, large);;
+  }
+  &:after {
+    width: $switch-after-widthHeight-lg;
+    height: $switch-after-widthHeight-lg;
+    top: $switch-after-top-lg;
+    left: $switch-after-left-lg;
+  }
+  &.is-checked {
+    .u-switch-inner {
+      left: map_get($switch-checked-innerLeft, large);
+    }
+    &:after {
+      left: map_get($switch-checked-afterLeft, large);
+    }
+    &:active:after {
+      left: map_get($switch-checked-activeLeft, large);
+    }
+  }
 }
-.is-checked.u-switch-danger{
-	@include switch-styles-variant($switch-danger-bg);
+
+.u-switch-primary.is-checked {
+  @include switch-styles-variant($switch-primary-bg);
 }
-.u-switch-warning.is-checked{
-	@include switch-styles-variant($switch-warning-bg);
+
+.u-switch-info.is-checked {
+  @include switch-styles-variant($switch-info-bg);
 }
-.u-switch-dark.is-checked{
-	@include switch-styles-variant($switch-dark-bg);
+
+.is-checked.u-switch-danger {
+  @include switch-styles-variant($switch-danger-bg);
 }
-.u-switch-success.is-checked{
-	@include switch-styles-variant($switch-success-bg);
+
+.u-switch-warning.is-checked {
+  @include switch-styles-variant($switch-warning-bg);
+}
+
+.u-switch-dark.is-checked {
+  @include switch-styles-variant($switch-dark-bg);
+}
+
+.u-switch-success.is-checked {
+  @include switch-styles-variant($switch-success-bg);
 }
