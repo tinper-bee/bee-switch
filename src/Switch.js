@@ -56,14 +56,12 @@ class Switch extends Component {
 		let classNames = classnames(clsPrefix,classes);
 
 		return(
-			<div>
 				<span onClick = {this.clickHandler} className={classnames(className,classNames)} tabIndex="0">
-					<span  
+					<span
 						className={`${clsPrefix}-inner`}>
 						{ checked?checkedChildren : unCheckedChildren}
 					</span>
 				</span>
-			</div>
 		)
 	}
 }
