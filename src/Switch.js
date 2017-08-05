@@ -32,8 +32,19 @@ class Switch extends Component {
 		}
 		this.clickHandler = this.clickHandler.bind(this)
 	}
+	componentWillReceiveProps(nextProps,nextState) {
+		if(nextProps.checked) {
+			this.setState({checked:nextProps.checked});
+		}else if(nextProps.defaultChecked) {
+			this.setState({checked:nextProps.defaultChecked});
+		}
+	}
+
 	//点击switch改变状态
 	clickHandler(){
+		if(this.props.checked !=undefined) {
+			return;
+		}
 		let checked = this.state.checked;
 		this.setState({
 			checked:!checked

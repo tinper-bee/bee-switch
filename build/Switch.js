@@ -63,10 +63,22 @@ var Switch = function (_Component) {
 		_this.clickHandler = _this.clickHandler.bind(_this);
 		return _this;
 	}
+
+	Switch.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps, nextState) {
+		if (nextProps.checked) {
+			this.setState({ checked: nextProps.checked });
+		} else if (nextProps.defaultChecked) {
+			this.setState({ checked: nextProps.defaultChecked });
+		}
+	};
+
 	//点击switch改变状态
 
 
 	Switch.prototype.clickHandler = function clickHandler() {
+		if (this.props.checked != undefined) {
+			return;
+		}
 		var checked = this.state.checked;
 		this.setState({
 			checked: !checked
@@ -98,17 +110,13 @@ var Switch = function (_Component) {
 		var classNames = (0, _classnames2["default"])(clsPrefix, classes);
 
 		return _react2["default"].createElement(
-			'div',
-			null,
+			'span',
+			{ onClick: this.clickHandler, className: (0, _classnames2["default"])(className, classNames), tabIndex: '0' },
 			_react2["default"].createElement(
 				'span',
-				{ onClick: this.clickHandler, className: (0, _classnames2["default"])(className, classNames), tabIndex: '0' },
-				_react2["default"].createElement(
-					'span',
-					{
-						className: clsPrefix + '-inner' },
-					checked ? checkedChildren : unCheckedChildren
-				)
+				{
+					className: clsPrefix + '-inner' },
+				checked ? checkedChildren : unCheckedChildren
 			)
 		);
 	};

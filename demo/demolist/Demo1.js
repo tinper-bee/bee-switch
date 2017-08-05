@@ -8,7 +8,11 @@
 class Demo1 extends Component {
     render () {
         return (
-            <Switch />
+            <div>
+                <Switch />
+                <Switch checked/>
+            </div>
+            
         )
     }
 }

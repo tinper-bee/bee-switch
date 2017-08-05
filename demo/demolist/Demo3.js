@@ -9,13 +9,15 @@ class Demo3 extends Component {
     constructor(props){
         super(props);
         this.state = {
-            switch : ""
+            switch : "",
+            checked: false
         };
         this.changeHandle = this.changeHandle.bind(this);
     }
     changeHandle(e){
 		this.setState({
-            switch: `${e}`
+            switch: `${e}`,
+            checked: !this.state.checked
         })
 	}
 
@@ -23,10 +25,7 @@ class Demo3 extends Component {
         return (
             <Row>
                 <Col sm={2}>
-                    <Switch onChangeHandler = {this.changeHandle} checkedChildren={'开'} unCheckedChildren={'关'} />
-                </Col>
-                <Col sm={2}>
-                    <Switch checked={true} onChangeHandler = {this.changeHandle} checkedChildren={'on'} unCheckedChildren={'off'} />
+                    <Switch defaultChecked={this.state.checked}   onChangeHandler = {this.changeHandle} checkedChildren={'on'} unCheckedChildren={'off'} />
                 </Col>
                 <Col sm={2}>
                     <span>{ this.state.switch }</span>

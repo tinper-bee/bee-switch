@@ -22,7 +22,11 @@ const CARETUP = <i className="uf uf-arrow-up"></i>;
 class Demo1 extends Component {
     render () {
         return (
-            <Switch />
+            <div>
+                <Switch />
+                <Switch checked/>
+            </div>
+            
         )
     }
 }
@@ -62,13 +66,15 @@ class Demo3 extends Component {
     constructor(props){
         super(props);
         this.state = {
-            switch : ""
+            switch : "",
+            checked: false
         };
         this.changeHandle = this.changeHandle.bind(this);
     }
     changeHandle(e){
 		this.setState({
-            switch: `${e}`
+            switch: `${e}`,
+            checked: !this.state.checked
         })
 	}
 
@@ -76,10 +82,7 @@ class Demo3 extends Component {
         return (
             <Row>
                 <Col sm={2}>
-                    <Switch onChangeHandler = {this.changeHandle} checkedChildren={'开'} unCheckedChildren={'关'} />
-                </Col>
-                <Col sm={2}>
-                    <Switch checked={true} onChangeHandler = {this.changeHandle} checkedChildren={'on'} unCheckedChildren={'off'} />
+                    <Switch defaultChecked={this.state.checked}   onChangeHandler = {this.changeHandle} checkedChildren={'on'} unCheckedChildren={'off'} />
                 </Col>
                 <Col sm={2}>
                     <span>{ this.state.switch }</span>
@@ -88,7 +91,7 @@ class Demo3 extends Component {
         )
     }
 }
-var DemoArray = [{"example":<Demo1 />,"title":" 默认开关","code":"/**\n *\n * @title 默认开关\n * @description \n *\n */\n\nclass Demo1 extends Component {\n    render () {\n        return (\n            <Switch />\n        )\n    }\n}\n","desc":" "},{"example":<Demo2 />,"title":" 不同大小的开关","code":"/**\n *\n * @title 不同大小的开关\n * @description 通过`size`属性控制开关的大小\n *\n */\n\nclass Demo2 extends Component {\n\n    render () {\n        return (\n            <Row>\n                <Col sm={2}>\n                    <Switch checked={true} size='sm' />\n                </Col>\n                <Col sm={2}>\n                    <Switch checked={true} />\n                </Col>\n                <Col sm={2}>\n                    <Switch checked={true} size='lg' />\n                </Col>\n            </Row>\n        )\n    }\n}\n","desc":" 通过`size`属性控制开关的大小"},{"example":<Demo3 />,"title":" 事件开关","code":"/**\n *\n * @title 事件开关\n * @description 点击开关触发事件\n *\n */\n\nclass Demo3 extends Component {\n    constructor(props){\n        super(props);\n        this.state = {\n            switch : \"\"\n        };\n        this.changeHandle = this.changeHandle.bind(this);\n    }\n    changeHandle(e){\n\t\tthis.setState({\n            switch: `${e}`\n        })\n\t}\n\n    render () {\n        return (\n            <Row>\n                <Col sm={2}>\n                    <Switch onChangeHandler = {this.changeHandle} checkedChildren={'开'} unCheckedChildren={'关'} />\n                </Col>\n                <Col sm={2}>\n                    <Switch checked={true} onChangeHandler = {this.changeHandle} checkedChildren={'on'} unCheckedChildren={'off'} />\n                </Col>\n                <Col sm={2}>\n                    <span>{ this.state.switch }</span>\n                </Col>\n            </Row>\n        )\n    }\n}\n","desc":" 点击开关触发事件"}]
+var DemoArray = [{"example":<Demo1 />,"title":" 默认开关","code":"/**\n *\n * @title 默认开关\n * @description \n *\n */\n\nclass Demo1 extends Component {\n    render () {\n        return (\n            <div>\n                <Switch />\n                <Switch checked/>\n            </div>\n            \n        )\n    }\n}\n","desc":" "},{"example":<Demo2 />,"title":" 不同大小的开关","code":"/**\n *\n * @title 不同大小的开关\n * @description 通过`size`属性控制开关的大小\n *\n */\n\nclass Demo2 extends Component {\n\n    render () {\n        return (\n            <Row>\n                <Col sm={2}>\n                    <Switch checked={true} size='sm' />\n                </Col>\n                <Col sm={2}>\n                    <Switch checked={true} />\n                </Col>\n                <Col sm={2}>\n                    <Switch checked={true} size='lg' />\n                </Col>\n            </Row>\n        )\n    }\n}\n","desc":" 通过`size`属性控制开关的大小"},{"example":<Demo3 />,"title":" 事件开关","code":"/**\n *\n * @title 事件开关\n * @description 点击开关触发事件\n *\n */\n\nclass Demo3 extends Component {\n    constructor(props){\n        super(props);\n        this.state = {\n            switch : \"\",\n            checked: false\n        };\n        this.changeHandle = this.changeHandle.bind(this);\n    }\n    changeHandle(e){\n\t\tthis.setState({\n            switch: `${e}`,\n            checked: !this.state.checked\n        })\n\t}\n\n    render () {\n        return (\n            <Row>\n                <Col sm={2}>\n                    <Switch defaultChecked={this.state.checked}   onChangeHandler = {this.changeHandle} checkedChildren={'on'} unCheckedChildren={'off'} />\n                </Col>\n                <Col sm={2}>\n                    <span>{ this.state.switch }</span>\n                </Col>\n            </Row>\n        )\n    }\n}\n","desc":" 点击开关触发事件"}]
 
 
 class Demo extends Component {
