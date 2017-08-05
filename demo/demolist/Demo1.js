@@ -10,6 +10,7 @@ class Demo1 extends Component {
         return (
             <div>
                 <Switch />
+                <Switch defaultChecked={true}/>
                 <Switch checked/>
             </div>
             
