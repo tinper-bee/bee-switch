@@ -5,6 +5,10 @@
  *
  */
 
+import React, { Component } from 'react';
+import {Row, Col } from 'bee-layout';
+import Switch from '../../src';
+
 class Demo2 extends Component {
 
     render () {
@@ -23,3 +27,5 @@ class Demo2 extends Component {
         )
     }
 }
+
+export default Demo2;

@@ -4,6 +4,8 @@
  * @description 
  *
  */
+import React, { Component } from 'react';
+import Switch from '../../src';
 
 class Demo1 extends Component {
     render () {
@@ -17,3 +19,5 @@ class Demo1 extends Component {
         )
     }
 }
+
+export default Demo1;
