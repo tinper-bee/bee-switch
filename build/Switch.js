@@ -1,22 +1,22 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
-var _react = require('react');
+var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = require('react-dom');
+var _reactDom = require("react-dom");
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _classnames = require('classnames');
+var _classnames = require("classnames");
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-var _propTypes = require('prop-types');
+var _propTypes = require("prop-types");
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
@@ -31,104 +31,115 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); }
 
 var propTypes = {
-	clsPrefix: _propTypes2["default"].string,
-	disabled: _propTypes2["default"].bool,
-	checkedChildren: _propTypes2["default"].any,
-	unCheckedChildren: _propTypes2["default"].any,
-	onChangeHandler: _propTypes2["default"].func
+  clsPrefix: _propTypes2["default"].string,
+  disabled: _propTypes2["default"].bool,
+  checkedChildren: _propTypes2["default"].any,
+  unCheckedChildren: _propTypes2["default"].any,
+  onChangeHandler: _propTypes2["default"].func,
+  onChange: _propTypes2["default"].func
 };
 var defaultProps = {
-	clsPrefix: 'u-switch',
-	checkedChildren: null,
-	unCheckedChildren: null,
-	defaultChecked: false,
-	size: '',
-	disabled: false,
-	onChangeHandler: function onChangeHandler() {}
+  clsPrefix: "u-switch",
+  checkedChildren: null,
+  unCheckedChildren: null,
+  defaultChecked: false,
+  size: "",
+  disabled: false,
+  onChangeHandler: function onChangeHandler() {},
+  onChange: function onChange() {}
 };
 
 var Switch = function (_Component) {
-	_inherits(Switch, _Component);
+  _inherits(Switch, _Component);
 
-	function Switch(props) {
-		_classCallCheck(this, Switch);
+  function Switch(props) {
+    _classCallCheck(this, Switch);
 
-		var _this = _possibleConstructorReturn(this, _Component.call(this, props));
+    var _this = _possibleConstructorReturn(this, _Component.call(this, props));
 
-		var checked = false;
-		if ('checked' in _this.props) {
-			checked = !!_this.props.checked;
-		} else {
-			checked = !!_this.props.defaultChecked;
-		}
-		_this.state = {
-			checked: checked
-		};
-		_this.clickHandler = _this.clickHandler.bind(_this);
-		return _this;
-	}
+    _initialiseProps.call(_this);
 
-	Switch.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps, nextState) {
-		if (nextProps.checked) {
-			this.setState({ checked: nextProps.checked });
-		} else if (nextProps.defaultChecked) {
-			this.setState({ checked: nextProps.defaultChecked });
-		}
-	};
+    var checked = false;
+    if ("checked" in _this.props) {
+      checked = !!_this.props.checked;
+    } else {
+      checked = !!_this.props.defaultChecked;
+    }
+    _this.state = {
+      checked: checked
+    };
+    return _this;
+  }
 
-	//点击switch改变状态
+  Switch.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps, nextState) {
+    if (nextProps.checked) {
+      this.setState({ checked: nextProps.checked });
+    } else if (nextProps.defaultChecked) {
+      this.setState({ checked: nextProps.defaultChecked });
+    }
+  };
+
+  //点击switch改变状态
 
 
-	Switch.prototype.clickHandler = function clickHandler() {
-		if (this.props.checked != undefined) {
-			return;
-		}
-		var checked = this.state.checked;
-		this.setState({
-			checked: !checked
-		});
-		this.props.onChangeHandler(!checked);
-	};
+  Switch.prototype.render = function render() {
+    var _props = this.props,
+        checkedChildren = _props.checkedChildren,
+        unCheckedChildren = _props.unCheckedChildren,
+        onChangeHandler = _props.onChangeHandler,
+        size = _props.size,
+        className = _props.className,
+        clsPrefix = _props.clsPrefix,
+        colors = _props.colors;
+    //获取checked
 
-	Switch.prototype.render = function render() {
-		var _props = this.props,
-		    checkedChildren = _props.checkedChildren,
-		    unCheckedChildren = _props.unCheckedChildren,
-		    onChangeHandler = _props.onChangeHandler,
-		    size = _props.size,
-		    className = _props.className,
-		    clsPrefix = _props.clsPrefix,
-		    colors = _props.colors;
-		//获取checked
+    var checked = this.state.checked;
+    var classes = {
+      "is-checked": checked
+    };
+    if (size) {
+      classes[clsPrefix + "-" + size] = true;
+    }
+    if (colors) {
+      classes[clsPrefix + "-" + colors] = true;
+    }
+    var classNames = (0, _classnames2["default"])(clsPrefix, classes);
 
-		var checked = this.state.checked;
-		var classes = {
-			'is-checked': checked
-		};
-		if (size) {
-			classes[clsPrefix + '-' + size] = true;
-		}
-		if (colors) {
-			classes[clsPrefix + '-' + colors] = true;
-		}
-		var classNames = (0, _classnames2["default"])(clsPrefix, classes);
+    return _react2["default"].createElement(
+      "span",
+      {
+        onClick: this.clickHandler,
+        className: (0, _classnames2["default"])(className, classNames),
+        tabIndex: "0"
+      },
+      _react2["default"].createElement(
+        "span",
+        { className: clsPrefix + "-inner" },
+        checked ? checkedChildren : unCheckedChildren
+      )
+    );
+  };
 
-		return _react2["default"].createElement(
-			'span',
-			{ onClick: this.clickHandler, className: (0, _classnames2["default"])(className, classNames), tabIndex: '0' },
-			_react2["default"].createElement(
-				'span',
-				{
-					className: clsPrefix + '-inner' },
-				checked ? checkedChildren : unCheckedChildren
-			)
-		);
-	};
-
-	return Switch;
+  return Switch;
 }(_react.Component);
+
+var _initialiseProps = function _initialiseProps() {
+  var _this2 = this;
+
+  this.clickHandler = function () {
+    if (_this2.props.checked != undefined) {
+      return;
+    }
+    var checked = _this2.state.checked;
+    _this2.setState({
+      checked: !checked
+    });
+    _this2.props.onChangeHandler(!checked);
+    _this2.props.onChange(!checked);
+  };
+};
 
 Switch.propTypes = propTypes;
 Switch.defaultProps = defaultProps;
 exports["default"] = Switch;
-module.exports = exports['default'];
+module.exports = exports["default"];
