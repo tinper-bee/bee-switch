@@ -12,11 +12,10 @@ class Demo1 extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            defaultChecked:true,
-            checked:true
+            defaultChecked:true
         };
     }
-    defaultCheckChange = () => {
+    onChange = () => {
         this.setState({
             defaultChecked: !this.state.defaultChecked
         })
@@ -28,7 +27,7 @@ class Demo1 extends Component {
                     <Switch/>
                 </Col>
                 <Col sm={2}>
-                    <Switch defaultChecked={this.state.defaultChecked} onChangeHandler={this.defaultCheckChange}/>
+                    <Switch defaultChecked={this.state.defaultChecked} onChange={this.onChange}/>
                 </Col>
             </Row>
         )
