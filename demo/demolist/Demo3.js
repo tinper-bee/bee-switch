@@ -5,38 +5,42 @@
  *
  */
 
-import React, { Component } from 'react';
-import {Row, Col } from 'bee-layout';
-import Switch from '../../src';
+import React, { Component } from "react";
+import { Row, Col } from "bee-layout";
+import Switch from "../../src";
 
 class Demo3 extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            switch : "",
-            checked: false
-        };
-        this.onChange = this.onChange.bind(this);
-    }
-    onChange(e){
-		this.setState({
-            switch: `${e}`,
-            checked: !this.state.checked
-        })
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      switch: "",
+      checked: false
+    };
+  }
+  onChange = e => {
+    this.setState({
+      switch: `${e}`,
+      checked: !this.state.checked
+    });
+  };
 
-    render () {
-        return (
-            <Row>
-                <Col sm={2}>
-                    <Switch defaultChecked={this.state.checked}   onChange = {this.onChange} checkedChildren={'on'} unCheckedChildren={'off'} />
-                </Col>
-                <Col sm={2}>
-                    <span>{ this.state.switch }</span>
-                </Col>
-            </Row>
-        )
-    }
+  render() {
+    return (
+      <Row>
+        <Col sm={2}>
+          <Switch
+            defaultChecked={this.state.checked}
+            onChange={this.onChange}
+            checkedChildren={"on"}
+            unCheckedChildren={"off"}
+          />
+        </Col>
+        <Col sm={2}>
+          <span>{this.state.switch}</span>
+        </Col>
+      </Row>
+    );
+  }
 }
 
 export default Demo3;
