@@ -1,21 +1,35 @@
 /**
  *
  * @title 默认开关
- * @description 
+ * @description
  *
  */
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import {Row, Col } from 'bee-layout';
 import Switch from '../../src';
 
 class Demo1 extends Component {
-    render () {
+    constructor(props) {
+        super(props);
+        this.state = {
+            defaultChecked:true
+        };
+    }
+    onChange = () => {
+        this.setState({
+            defaultChecked: !this.state.defaultChecked
+        })
+    }
+    render() {
         return (
-            <div>
-                <Switch />
-                <Switch defaultChecked={true}/>
-                <Switch checked/>
-            </div>
-            
+            <Row>
+                <Col sm={2}>
+                    <Switch/>
+                </Col>
+                <Col sm={2}>
+                    <Switch defaultChecked={this.state.defaultChecked} onChange={this.onChange}/>
+                </Col>
+            </Row>
         )
     }
 }

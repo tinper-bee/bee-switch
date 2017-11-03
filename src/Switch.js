@@ -8,7 +8,8 @@ const propTypes = {
     disabled: PropTypes.bool,
     checkedChildren: PropTypes.any,
     unCheckedChildren: PropTypes.any,
-    onChangeHandler: PropTypes.func
+    onChangeHandler: PropTypes.func,
+    onChange: PropTypes.func,
 };
 const defaultProps = {
     clsPrefix: 'u-switch',
@@ -17,7 +18,8 @@ const defaultProps = {
 	defaultChecked: false,
 	size:'',
 	disabled:false,
-	onChangeHandler: function(){}
+	onChangeHandler: function(){},
+	onChange: function(){},
 };
 class Switch extends Component {
 
@@ -52,6 +54,7 @@ class Switch extends Component {
 			checked:!checked
 		})
 		this.props.onChangeHandler(!checked);
+		this.props.onChange(!checked);
 	}
 	render(){
 		const { checkedChildren,unCheckedChildren,onChangeHandler,size,className,clsPrefix,colors } = this.props;
