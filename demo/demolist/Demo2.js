@@ -15,13 +15,13 @@ class Demo2 extends Component {
         return (
             <Row>
                 <Col sm={2}>
-                    <Switch checked={true} size='sm' />
+                    <Switch size='sm' />
                 </Col>
                 <Col sm={2}>
-                    <Switch checked={true} />
+                    <Switch  />
                 </Col>
                 <Col sm={2}>
-                    <Switch checked={true} size='lg' />
+                    <Switch  size='lg' />
                 </Col>
             </Row>
         )
