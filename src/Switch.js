@@ -24,36 +24,59 @@ const defaultProps = {
 class Switch extends Component {
   constructor(props) {
     super(props);
-    var checked = false;
-    if ("checked" in this.props) {
-      checked = !!this.props.checked;
-    } else {
-      checked = !!this.props.defaultChecked;
+    let checked = false;
+    if ('checked' in props) {
+      checked = !!props.checked;
+    } else if('defaultValue' in props) {
+      checked = !!props.defaultValue;
+    } else{
+      checked = !!props.defaultChecked;
     }
-    this.state = {
-      checked: checked
-    };
+    this.state = { checked };
   }
   componentWillReceiveProps(nextProps, nextState) {
-    if (nextProps.checked) {
-      this.setState({ checked: nextProps.checked });
-    } else if (nextProps.defaultChecked) {
-      this.setState({ checked: nextProps.defaultChecked });
+    if ("checked" in nextProps) {
+      this.setState({ checked: !!nextProps.checked });
     }
   }
-
-  //点击switch改变状态
-  clickHandler = () => {
-    if (this.props.checked != undefined) {
+  setChecked=(checked)=>{
+    if (this.props.disabled) {
       return;
     }
-    let checked = this.state.checked;
-    this.setState({
-      checked: !checked
-    });
-    this.props.onChangeHandler(!checked);
-    this.props.onChange(!checked);
+    if (!('checked' in this.props)) {
+      this.setState({
+        checked,
+      });
+    }
+    this.props.onChangeHandler(checked);
+    this.props.onChange(checked);
+  }
+  //点击switch改变状态
+  clickHandler = () => {
+    const checked = !this.state.checked;
+    this.setChecked(checked);
   };
+  handleKeyDown = (e) => {
+    if (e.keyCode === 37) { // Left
+      this.setChecked(false);
+    } else if (e.keyCode === 39) { // Right
+      this.setChecked(true);
+    } else if (e.keyCode === 32 || e.keyCode === 13) { // Space, Enter
+      this.clickHandler();
+    }
+  }
+  // Handle auto focus when click switch in Chrome
+  handleMouseUp = (e) => {
+    if (this.node) {
+      this.node.blur();
+    }
+    if (this.props.onMouseUp) {
+      this.props.onMouseUp(e);
+    }
+  }
+  saveNode = (node) => {
+    this.node = node;
+  }
   render() {
     const {
       checkedChildren,
@@ -62,7 +85,9 @@ class Switch extends Component {
       size,
       className,
       clsPrefix,
-      colors
+      disabled,
+      colors,
+      ...others
     } = this.props;
     //获取checked
     const checked = this.state.checked;
@@ -75,13 +100,19 @@ class Switch extends Component {
     if (colors) {
       classes[`${clsPrefix}-${colors}`] = true;
     }
+    classes[[`${clsPrefix}-disabled`]] = disabled;
+
     let classNames = classnames(clsPrefix, classes);
 
     return (
       <span
+        {...others}
+        ref={this.saveNode}
         onClick={this.clickHandler}
+        onKeyDown={this.handleKeyDown}
+        onMouseUp={this.handleMouseUp}
         className={classnames(className, classNames)}
-        tabIndex="0"
+        tabIndex={disabled ? -1 : 0}
       >
         <span className={`${clsPrefix}-inner`}>
           {checked ? checkedChildren : unCheckedChildren}

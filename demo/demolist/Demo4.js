@@ -1,6 +1,6 @@
 /**
  *
- * @title 默认开关
+ * @title 被禁用开关
  * @description
  *
  */
@@ -8,33 +8,33 @@ import React, { Component } from "react";
 import { Row, Col } from "bee-layout";
 import Switch from "../../src";
 
-class Demo1 extends Component {
+class Demo4 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      checked: true
+        defaultDisabled: true
     };
   }
   onChange = () => {
     this.setState({
-      checked: !this.state.checked
+      defaultDisabled: !this.state.defaultDisabled
     });
   };
+  onConsoleLog=(x)=>{
+    console.log(x) 
+  }
   render() {
     return (
       <Row>
         <Col sm={2}>
-          <Switch />
+          <Switch disabled={this.state.defaultDisabled}/>
         </Col>
         <Col sm={2}>
-          <Switch
-            checked={this.state.checked}
-            onChange={this.onChange}
-          />
+          <button onClick={this.onChange}>toggle disabled</button>
         </Col>
       </Row>
     );
   }
 }
 
-export default Demo1;
+export default Demo4;

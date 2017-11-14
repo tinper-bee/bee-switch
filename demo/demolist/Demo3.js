@@ -29,7 +29,7 @@ class Demo3 extends Component {
       <Row>
         <Col sm={2}>
           <Switch
-            defaultChecked={this.state.checked}
+            checked={this.state.checked}
             onChange={this.onChange}
             checkedChildren={"on"}
             unCheckedChildren={"off"}
