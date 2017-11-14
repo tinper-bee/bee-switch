@@ -4,6 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
@@ -23,6 +25,8 @@ var _propTypes2 = _interopRequireDefault(_propTypes);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -60,26 +64,25 @@ var Switch = function (_Component) {
     _initialiseProps.call(_this);
 
     var checked = false;
-    if ("checked" in _this.props) {
-      checked = !!_this.props.checked;
+    if ('checked' in props) {
+      checked = !!props.checked;
+    } else if ('defaultValue' in props) {
+      checked = !!props.defaultValue;
     } else {
-      checked = !!_this.props.defaultChecked;
+      checked = !!props.defaultChecked;
     }
-    _this.state = {
-      checked: checked
-    };
+    _this.state = { checked: checked };
     return _this;
   }
 
   Switch.prototype.componentWillReceiveProps = function componentWillReceiveProps(nextProps, nextState) {
-    if (nextProps.checked) {
-      this.setState({ checked: nextProps.checked });
-    } else if (nextProps.defaultChecked) {
-      this.setState({ checked: nextProps.defaultChecked });
+    if ("checked" in nextProps) {
+      this.setState({ checked: !!nextProps.checked });
     }
   };
-
   //点击switch改变状态
+
+  // Handle auto focus when click switch in Chrome
 
 
   Switch.prototype.render = function render() {
@@ -90,8 +93,11 @@ var Switch = function (_Component) {
         size = _props.size,
         className = _props.className,
         clsPrefix = _props.clsPrefix,
-        colors = _props.colors;
+        disabled = _props.disabled,
+        colors = _props.colors,
+        others = _objectWithoutProperties(_props, ["checkedChildren", "unCheckedChildren", "onChangeHandler", "size", "className", "clsPrefix", "disabled", "colors"]);
     //获取checked
+
 
     var checked = this.state.checked;
     var classes = {
@@ -103,15 +109,20 @@ var Switch = function (_Component) {
     if (colors) {
       classes[clsPrefix + "-" + colors] = true;
     }
+    classes[[clsPrefix + "-disabled"]] = disabled;
+
     var classNames = (0, _classnames2["default"])(clsPrefix, classes);
 
     return _react2["default"].createElement(
       "span",
-      {
+      _extends({}, others, {
+        ref: this.saveNode,
         onClick: this.clickHandler,
+        onKeyDown: this.handleKeyDown,
+        onMouseUp: this.handleMouseUp,
         className: (0, _classnames2["default"])(className, classNames),
-        tabIndex: "0"
-      },
+        tabIndex: disabled ? -1 : 0
+      }),
       _react2["default"].createElement(
         "span",
         { className: clsPrefix + "-inner" },
@@ -126,16 +137,48 @@ var Switch = function (_Component) {
 var _initialiseProps = function _initialiseProps() {
   var _this2 = this;
 
-  this.clickHandler = function () {
-    if (_this2.props.checked != undefined) {
+  this.setChecked = function (checked) {
+    if (_this2.props.disabled) {
       return;
     }
-    var checked = _this2.state.checked;
-    _this2.setState({
-      checked: !checked
-    });
-    _this2.props.onChangeHandler(!checked);
-    _this2.props.onChange(!checked);
+    if (!('checked' in _this2.props)) {
+      _this2.setState({
+        checked: checked
+      });
+    }
+    _this2.props.onChangeHandler(checked);
+    _this2.props.onChange(checked);
+  };
+
+  this.clickHandler = function () {
+    var checked = !_this2.state.checked;
+    _this2.setChecked(checked);
+  };
+
+  this.handleKeyDown = function (e) {
+    if (e.keyCode === 37) {
+      // Left
+      _this2.setChecked(false);
+    } else if (e.keyCode === 39) {
+      // Right
+      _this2.setChecked(true);
+    } else if (e.keyCode === 32 || e.keyCode === 13) {
+      // Space, Enter
+      _this2.clickHandler();
+    }
+  };
+
+  this.handleMouseUp = function (e) {
+    if (_this2.node) {
+      _this2.node.blur();
+    }
+    if (_this2.props.onMouseUp) {
+      _this2.props.onMouseUp(e);
+    }
+  };
+
+  this.saveNode = function (node) {
+    _this2.node = node;
   };
 };
 
