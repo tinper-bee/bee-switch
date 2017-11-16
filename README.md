@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/bee-switch.svg)](https://www.npmjs.com/package/bee-switch)
 [![Build Status](https://img.shields.io/travis/tinper-bee/bee-switch/master.svg)](https://travis-ci.org/tinper-bee/bee-switch)
 [![Coverage Status](https://coveralls.io/repos/github/tinper-bee/bee-switch/badge.svg?branch=master)](https://coveralls.io/github/tinper-bee/bee-switch?branch=master)
-[![devDependency Status](https://img.shields.io/david/dev/tinper-bee/bee-switch.svg)](https://david-dm.org/tinper-bee/bee-switch#info=devDependencies)
+[![dependencies Status](https://david-dm.org/tinper-bee/bee-switch/status.svg)](https://david-dm.org/tinper-bee/bee-switch)
 [![NPM downloads](http://img.shields.io/npm/dm/bee-switch.svg?style=flat)](https://npmjs.org/package/bee-switch)
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/tinper-bee/bee-switch.svg)](http://isitmaintained.com/project/tinper-bee/bee-switch "Average time to resolve an issue")
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/tinper-bee/bee-switch.svg)](http://isitmaintained.com/project/tinper-bee/bee-switch "Percentage of issues still open")
