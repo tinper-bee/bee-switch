@@ -50,6 +50,10 @@
 	
 	var _beePanel = __webpack_require__(8);
 	
+	var _beeButton = __webpack_require__(103);
+	
+	var _beeButton2 = _interopRequireDefault(_beeButton);
+	
 	var _react = __webpack_require__(4);
 	
 	var _react2 = _interopRequireDefault(_react);
@@ -57,14 +61,6 @@
 	var _reactDom = __webpack_require__(12);
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
-	
-	var _beeButton = __webpack_require__(103);
-	
-	var _beeButton2 = _interopRequireDefault(_beeButton);
-	
-	var _src = __webpack_require__(105);
-	
-	var _src2 = _interopRequireDefault(_src);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
@@ -80,7 +76,7 @@
 	
 	var CARETUP = _react2['default'].createElement('i', { className: 'uf uf-arrow-up' });
 	
-	var Demo1 = __webpack_require__(107);var Demo2 = __webpack_require__(108);var Demo3 = __webpack_require__(109);var Demo4 = __webpack_require__(110);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 默认开关", "code": "/**\n *\n * @title 默认开关\n * @description\n *\n */\nimport React, { Component } from \"react\";\nimport { Row, Col } from \"bee-layout\";\nimport Switch from \"../../src\";\n\nclass Demo1 extends Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      checked: true\n    };\n  }\n  onChange = () => {\n    this.setState({\n      checked: !this.state.checked\n    });\n  };\n  render() {\n    return (\n      <Row>\n        <Col sm={2}>\n          <Switch />\n        </Col>\n        <Col sm={2}>\n          <Switch\n            checked={this.state.checked}\n            onChange={this.onChange}\n          />\n        </Col>\n      </Row>\n    );\n  }\n}\n\n\n", "desc": "" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 不同大小的开关", "code": "/**\n *\n * @title 不同大小的开关\n * @description 通过`size`属性控制开关的大小\n *\n */\n\nimport React, { Component } from \"react\";\nimport { Row, Col } from \"bee-layout\";\nimport Switch from \"../../src\";\n\nclass Demo2 extends Component {\n  render() {\n    return (\n      <Row>\n        <Col sm={2}>\n          <Switch size=\"sm\" />\n        </Col>\n        <Col sm={2}>\n          <Switch />\n        </Col>\n        <Col sm={2}>\n          <Switch size=\"lg\" />\n        </Col>\n      </Row>\n    );\n  }\n}\n\n\n", "desc": " 通过`size`属性控制开关的大小" }, { "example": _react2['default'].createElement(Demo3, null), "title": " 事件开关", "code": "/**\n *\n * @title 事件开关\n * @description 点击开关触发事件\n *\n */\n\nimport React, { Component } from \"react\";\nimport { Row, Col } from \"bee-layout\";\nimport Switch from \"../../src\";\n\nclass Demo3 extends Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      switch: \"\",\n      checked: false\n    };\n  }\n  onChange = e => {\n    this.setState({\n      switch: `${e}`,\n      checked: !this.state.checked\n    });\n  };\n\n  render() {\n    return (\n      <Row>\n        <Col sm={2}>\n          <Switch\n            checked={this.state.checked}\n            onChange={this.onChange}\n            checkedChildren={\"on\"}\n            unCheckedChildren={\"off\"}\n          />\n        </Col>\n        <Col sm={2}>\n          <span>{this.state.switch}</span>\n        </Col>\n      </Row>\n    );\n  }\n}\n\n\n", "desc": " 点击开关触发事件" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 被禁用开关", "code": "/**\n *\n * @title 被禁用开关\n * @description\n *\n */\nimport React, { Component } from \"react\";\nimport { Row, Col } from \"bee-layout\";\nimport Switch from \"../../src\";\n\nclass Demo4 extends Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n        defaultDisabled: true\n    };\n  }\n  onChange = () => {\n    this.setState({\n      defaultDisabled: !this.state.defaultDisabled\n    });\n  };\n  onConsoleLog=(x)=>{\n    console.log(x) \n  }\n  render() {\n    return (\n      <Row>\n        <Col sm={2}>\n          <Switch disabled={this.state.defaultDisabled}/>\n        </Col>\n        <Col sm={2}>\n          <button onClick={this.onChange}>toggle disabled</button>\n        </Col>\n      </Row>\n    );\n  }\n}\n\n\n", "desc": "" }];
+	var Demo1 = __webpack_require__(105);var Demo2 = __webpack_require__(108);var Demo3 = __webpack_require__(109);var Demo4 = __webpack_require__(110);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 默认开关", "code": "/**\n *\n * @title 默认开关\n * @description\n *\n */\nimport React, { Component } from \"react\";\nimport { Switch,  Row, Col  } from 'tinper-bee';\n\nclass Demo1 extends Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      checked: true\n    };\n  }\n  onChange = () => {\n    this.setState({\n      checked: !this.state.checked\n    });\n  };\n  render() {\n    return (\n      <Row>\n        <Col sm={2}>\n          <Switch />\n        </Col>\n        <Col sm={2}>\n          <Switch\n            checked={this.state.checked}\n            onChange={this.onChange}\n          />\n        </Col>\n      </Row>\n    );\n  }\n}\n\n\n", "desc": "" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 不同大小的开关", "code": "/**\n *\n * @title 不同大小的开关\n * @description 通过`size`属性控制开关的大小\n *\n */\n\nimport React, { Component } from \"react\";\nimport { Switch,  Row, Col  } from 'tinper-bee';\n\nclass Demo2 extends Component {\n  render() {\n    return (\n      <Row>\n        <Col sm={2}>\n          <Switch size=\"sm\" />\n        </Col>\n        <Col sm={2}>\n          <Switch />\n        </Col>\n        <Col sm={2}>\n          <Switch size=\"lg\" />\n        </Col>\n      </Row>\n    );\n  }\n}\n\n\n", "desc": " 通过`size`属性控制开关的大小" }, { "example": _react2['default'].createElement(Demo3, null), "title": " 事件开关", "code": "/**\n *\n * @title 事件开关\n * @description 点击开关触发事件\n *\n */\n\nimport React, { Component } from \"react\";\nimport { Switch,  Row, Col  } from 'tinper-bee';\n\nclass Demo3 extends Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n      switch: \"\",\n      checked: false\n    };\n  }\n  onChange = e => {\n    this.setState({\n      switch: `${e}`,\n      checked: !this.state.checked\n    });\n  };\n\n  render() {\n    return (\n      <Row>\n        <Col sm={2}>\n          <Switch\n            checked={this.state.checked}\n            onChange={this.onChange}\n            checkedChildren={\"on\"}\n            unCheckedChildren={\"off\"}\n          />\n        </Col>\n        <Col sm={2}>\n          <span>{this.state.switch}</span>\n        </Col>\n      </Row>\n    );\n  }\n}\n\n\n", "desc": " 点击开关触发事件" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 被禁用开关", "code": "/**\n *\n * @title 被禁用开关\n * @description\n *\n */\nimport React, { Component } from \"react\";\nimport { Switch,  Row, Col  } from 'tinper-bee';\n\nclass Demo4 extends Component {\n  constructor(props) {\n    super(props);\n    this.state = {\n        defaultDisabled: true\n    };\n  }\n  onChange = () => {\n    this.setState({\n      defaultDisabled: !this.state.defaultDisabled\n    });\n  };\n  onConsoleLog=(x)=>{\n    console.log(x) \n  }\n  render() {\n    return (\n      <Row>\n        <Col sm={2}>\n          <Switch disabled={this.state.defaultDisabled}/>\n        </Col>\n        <Col sm={2}>\n          <button onClick={this.onChange}>toggle disabled</button>\n        </Col>\n      </Row>\n    );\n  }\n}\n\n\n", "desc": "" }];
 	
 	var Demo = function (_Component) {
 	    _inherits(Demo, _Component);
@@ -106,18 +102,23 @@
 	            title = _props.title,
 	            example = _props.example,
 	            code = _props.code,
-	            desc = _props.desc;
+	            desc = _props.desc,
+	            scss_code = _props.scss_code;
 	
 	        var caret = this.state.open ? CARETUP : CARET;
 	        var text = this.state.open ? "隐藏代码" : "查看代码";
 	
-	        var footer = _react2['default'].createElement(
-	            _beeButton2['default'],
-	            { shape: 'block', onClick: this.handleClick },
-	            caret,
-	            text
+	        var header = _react2['default'].createElement(
+	            'div',
+	            null,
+	            example,
+	            _react2['default'].createElement(
+	                _beeButton2['default'],
+	                { style: { "marginTop": "10px" }, shape: 'block', onClick: this.handleClick },
+	                caret,
+	                text
+	            )
 	        );
-	
 	        return _react2['default'].createElement(
 	            _beeLayout.Col,
 	            { md: 12 },
@@ -133,7 +134,7 @@
 	            ),
 	            _react2['default'].createElement(
 	                _beePanel.Panel,
-	                { collapsible: true, expanded: this.state.open, colors: 'bordered', header: example, footer: footer, footerStyle: { padding: 0 } },
+	                { collapsible: true, headerContent: true, expanded: this.state.open, colors: 'bordered', header: header, footerStyle: { padding: 0 } },
 	                _react2['default'].createElement(
 	                    'pre',
 	                    null,
@@ -142,7 +143,16 @@
 	                        { className: 'hljs javascript' },
 	                        code
 	                    )
-	                )
+	                ),
+	                !!scss_code ? _react2['default'].createElement(
+	                    'pre',
+	                    null,
+	                    _react2['default'].createElement(
+	                        'code',
+	                        { className: 'hljs css' },
+	                        scss_code
+	                    )
+	                ) : null
 	            )
 	        );
 	    };
@@ -165,7 +175,7 @@
 	            null,
 	            DemoArray.map(function (child, index) {
 	
-	                return _react2['default'].createElement(Demo, { example: child.example, title: child.title, code: child.code, desc: child.desc, key: index });
+	                return _react2['default'].createElement(Demo, { example: child.example, title: child.title, code: child.code, scss_code: child.scss_code, desc: child.desc, key: index });
 	            })
 	        );
 	    };
@@ -2722,7 +2732,7 @@
 /* 41 */
 /***/ (function(module, exports) {
 
-	var core = module.exports = { version: '2.5.1' };
+	var core = module.exports = { version: '2.5.3' };
 	if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
@@ -6206,12 +6216,18 @@
 	      elFuturePos = (0, _getElFuturePos2['default'])(elRegion, refNodeRegion, points, offset, targetOffset);
 	      _utils2['default'].mix(newElRegion, elFuturePos);
 	    }
-	
-	    // 检查反下后的位置是否可以放下了
-	    // 如果仍然放不下只有指定了可以调整当前方向才调整
-	    newOverflowCfg.adjustX = overflow.adjustX && isFailX(elFuturePos, elRegion, visibleRect);
-	
-	    newOverflowCfg.adjustY = overflow.adjustY && isFailY(elFuturePos, elRegion, visibleRect);
+	    var isStillFailX = isFailX(elFuturePos, elRegion, visibleRect);
+	    var isStillFailY = isFailY(elFuturePos, elRegion, visibleRect);
+	    // 检查反下后的位置是否可以放下了，如果仍然放不下：
+	    // 1. 复原修改过的定位参数
+	    if (isStillFailX || isStillFailY) {
+	      points = align.points;
+	      offset = align.offset || [0, 0];
+	      targetOffset = align.targetOffset || [0, 0];
+	    }
+	    // 2. 只有指定了可以调整当前方向才调整
+	    newOverflowCfg.adjustX = overflow.adjustX && isStillFailX;
+	    newOverflowCfg.adjustY = overflow.adjustY && isStillFailY;
 	
 	    // 确实要调整，甚至可能会调整高度宽度
 	    if (newOverflowCfg.adjustX || newOverflowCfg.adjustY) {
@@ -6282,8 +6298,12 @@
 	
 	var getComputedStyleX = void 0;
 	
-	function force(x, y) {
-	  return x + y;
+	// https://stackoverflow.com/a/3485654/3040605
+	function forceRelayout(elem) {
+	  var originalStyle = elem.style.display;
+	  elem.style.display = 'none';
+	  elem.offsetHeight; // eslint-disable-line
+	  elem.style.display = originalStyle;
 	}
 	
 	function css(el, name, v) {
@@ -6518,6 +6538,8 @@
 	    elem.style[oppositeVerticalProperty] = '';
 	    elem.style[verticalProperty] = presetV + 'px';
 	  }
+	  // force relayout
+	  forceRelayout(elem);
 	  var old = getOffset(elem);
 	  var originalStyle = {};
 	  for (var key in offset) {
@@ -6534,7 +6556,7 @@
 	  }
 	  css(elem, originalStyle);
 	  // force relayout
-	  force(elem.offsetTop, elem.offsetLeft);
+	  forceRelayout(elem);
 	  if ('left' in offset || 'top' in offset) {
 	    (0, _propertyUtils.setTransitionProperty)(elem, originalTransition);
 	  }
@@ -7696,15 +7718,16 @@
 	     * @title <button> 的 type
 	     * @veIgnore
 	     */
-	    htmlType: _propTypes2["default"].oneOf(['submit', 'button', 'reset'])
+	    htmlType: _propTypes2["default"].oneOf(['submit', 'button', 'reset']),
+	    isSubmit: _propTypes2["default"].bool //是否作为form的提交按钮
 	};
 	
 	var defaultProps = {
 	    disabled: false,
 	    htmlType: 'button',
 	    clsPrefix: 'u-button',
-	    bordered: false
-	
+	    bordered: false,
+	    isSubmit: false
 	};
 	
 	var sizeMap = {
@@ -7751,7 +7774,8 @@
 	            children = _props.children,
 	            htmlType = _props.htmlType,
 	            clsPrefix = _props.clsPrefix,
-	            others = _objectWithoutProperties(_props, ['colors', 'shape', 'disabled', 'className', 'size', 'bordered', 'children', 'htmlType', 'clsPrefix']);
+	            isSubmit = _props.isSubmit,
+	            others = _objectWithoutProperties(_props, ['colors', 'shape', 'disabled', 'className', 'size', 'bordered', 'children', 'htmlType', 'clsPrefix', 'isSubmit']);
 	
 	        var clsObj = {};
 	        if (className) {
@@ -7793,13 +7817,95 @@
 /* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(4);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _beeLayout = __webpack_require__(1);
+	
+	var _src = __webpack_require__(106);
+	
+	var _src2 = _interopRequireDefault(_src);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+	
+	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @title 默认开关
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
+	
+	var Demo1 = function (_Component) {
+	  _inherits(Demo1, _Component);
+	
+	  function Demo1(props) {
+	    _classCallCheck(this, Demo1);
+	
+	    var _this = _possibleConstructorReturn(this, _Component.call(this, props));
+	
+	    _this.onChange = function () {
+	      _this.setState({
+	        checked: !_this.state.checked
+	      });
+	    };
+	
+	    _this.state = {
+	      checked: true
+	    };
+	    return _this;
+	  }
+	
+	  Demo1.prototype.render = function render() {
+	    return _react2["default"].createElement(
+	      _beeLayout.Row,
+	      null,
+	      _react2["default"].createElement(
+	        _beeLayout.Col,
+	        { sm: 2 },
+	        _react2["default"].createElement(_src2["default"], null)
+	      ),
+	      _react2["default"].createElement(
+	        _beeLayout.Col,
+	        { sm: 2 },
+	        _react2["default"].createElement(_src2["default"], {
+	          checked: this.state.checked,
+	          onChange: this.onChange
+	        })
+	      )
+	    );
+	  };
+	
+	  return Demo1;
+	}(_react.Component);
+	
+	exports["default"] = Demo1;
+	module.exports = exports["default"];
+
+/***/ }),
+/* 106 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
 	
-	var _Switch = __webpack_require__(106);
+	var _Switch = __webpack_require__(107);
 	
 	var _Switch2 = _interopRequireDefault(_Switch);
 
@@ -7809,7 +7915,7 @@
 	module.exports = exports['default'];
 
 /***/ }),
-/* 106 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -8002,88 +8108,6 @@
 	module.exports = exports["default"];
 
 /***/ }),
-/* 107 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	var _react = __webpack_require__(4);
-	
-	var _react2 = _interopRequireDefault(_react);
-	
-	var _beeLayout = __webpack_require__(1);
-	
-	var _src = __webpack_require__(105);
-	
-	var _src2 = _interopRequireDefault(_src);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-	
-	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
-	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-	
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : _defaults(subClass, superClass); } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @title 默认开关
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
-	
-	
-	var Demo1 = function (_Component) {
-	  _inherits(Demo1, _Component);
-	
-	  function Demo1(props) {
-	    _classCallCheck(this, Demo1);
-	
-	    var _this = _possibleConstructorReturn(this, _Component.call(this, props));
-	
-	    _this.onChange = function () {
-	      _this.setState({
-	        checked: !_this.state.checked
-	      });
-	    };
-	
-	    _this.state = {
-	      checked: true
-	    };
-	    return _this;
-	  }
-	
-	  Demo1.prototype.render = function render() {
-	    return _react2["default"].createElement(
-	      _beeLayout.Row,
-	      null,
-	      _react2["default"].createElement(
-	        _beeLayout.Col,
-	        { sm: 2 },
-	        _react2["default"].createElement(_src2["default"], null)
-	      ),
-	      _react2["default"].createElement(
-	        _beeLayout.Col,
-	        { sm: 2 },
-	        _react2["default"].createElement(_src2["default"], {
-	          checked: this.state.checked,
-	          onChange: this.onChange
-	        })
-	      )
-	    );
-	  };
-	
-	  return Demo1;
-	}(_react.Component);
-	
-	exports["default"] = Demo1;
-	module.exports = exports["default"];
-
-/***/ }),
 /* 108 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8099,7 +8123,7 @@
 	
 	var _beeLayout = __webpack_require__(1);
 	
-	var _src = __webpack_require__(105);
+	var _src = __webpack_require__(106);
 	
 	var _src2 = _interopRequireDefault(_src);
 	
@@ -8171,7 +8195,7 @@
 	
 	var _beeLayout = __webpack_require__(1);
 	
-	var _src = __webpack_require__(105);
+	var _src = __webpack_require__(106);
 	
 	var _src2 = _interopRequireDefault(_src);
 	
@@ -8260,7 +8284,7 @@
 	
 	var _beeLayout = __webpack_require__(1);
 	
-	var _src = __webpack_require__(105);
+	var _src = __webpack_require__(106);
 	
 	var _src2 = _interopRequireDefault(_src);
 	
