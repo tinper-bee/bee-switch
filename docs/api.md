@@ -14,5 +14,5 @@
 |disabled|设置是否禁用|Boolean|false|
 |checkedChildren	|选中时的内容	|React| Node |
 |unCheckedChildren	|非选中时的内容	|React| Node|
-|size|	大小设置，oneOf：`primary`,`success`,`info`,`dark`,`warning`|string|''|
-|colors| 颜色设置，oneOf：`sm`, `lg`,''|	string	|''|
+|size|	大小设置，oneOf：`sm`, `lg`|string|''|
+|colors| 颜色设置，oneOf：`primary`,`success`,`info`,`dark`,`warning`''|	string	|''|
