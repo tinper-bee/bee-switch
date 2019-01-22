@@ -1,5 +1,10 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/tinper-bee/switch/compare/v1.0.4...v2.0.0) (2019-01-22)
+
+
+
 <a name="1.0.4"></a>
-## [1.0.4](https://github.com/tinper-bee/switch/compare/1.0.3...1.0.4) (2018-01-16)
+## [1.0.4](https://github.com/tinper-bee/switch/compare/1.0.3...v1.0.4) (2018-01-16)
 
 
 ### Features
