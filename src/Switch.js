@@ -1,3 +1,7 @@
+/**
+* This source code is quoted from rc-switch.
+* homepage: https://github.com/react-component/switch
+*/
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import classnames from "classnames";
