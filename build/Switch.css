@@ -42,8 +42,8 @@
     -webkit-transition: left 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86), width 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86);
     transition: left 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86), width 0.3s cubic-bezier(0.78, 0.14, 0.15, 0.86); }
   .u-switch.is-checked {
-    border-color: rgb(30,136,229);
-    background-color: rgb(30,136,229); }
+    border-color: rgb(245, 60, 50);
+    background-color: rgb(245, 60, 50); }
     .u-switch.is-checked .u-switch-inner {
       left: 8px; }
     .u-switch.is-checked:after {
@@ -110,8 +110,8 @@
     left: 26px; }
 
 .u-switch-primary.is-checked {
-  background: rgb(30,136,229);
-  border: 1px solid rgb(30,136,229); }
+  background: rgb(245, 60, 50);
+  border: 1px solid rgb(245, 60, 50); }
 
 .u-switch-info.is-checked {
   background: rgb(0,188,212);

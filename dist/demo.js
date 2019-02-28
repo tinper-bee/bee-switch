@@ -76,7 +76,7 @@
 	
 	var CARETUP = _react2['default'].createElement('i', { className: 'uf uf-arrow-up' });
 	
-	var Demo1 = __webpack_require__(84);var Demo2 = __webpack_require__(87);var Demo3 = __webpack_require__(88);var Demo4 = __webpack_require__(89);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 默认开关", "code": "/**\r\n *\r\n * @title 默认开关\r\n * @description\r\n *\r\n */\r\nimport React, { Component } from \"react\";\r\n\nimport { Switch,  Row, Col  } from 'tinper-bee';\r\n\r\nclass Demo1 extends Component {\r\n  constructor(props) {\r\n    super(props);\r\n    this.state = {\r\n      checked: true\r\n    };\r\n  }\r\n  onChange = () => {\r\n    this.setState({\r\n      checked: !this.state.checked\r\n    });\r\n  };\r\n  render() {\r\n    return (\r\n      <Row>\r\n        <Col sm={2}>\r\n          <Switch />\r\n        </Col>\r\n        <Col sm={2}>\r\n          <Switch\r\n            checked={this.state.checked}\r\n            onChange={this.onChange}\r\n          />\r\n        </Col>\r\n      </Row>\r\n    );\r\n  }\r\n}\r\n\r\n\r\n", "desc": "" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 不同大小的开关", "code": "/**\r\n *\r\n * @title 不同大小的开关\r\n * @description 通过`size`属性控制开关的大小\r\n *\r\n */\r\n\r\nimport React, { Component } from \"react\";\r\n\nimport { Switch,  Row, Col  } from 'tinper-bee';\r\n\r\nclass Demo2 extends Component {\r\n  render() {\r\n    return (\r\n      <Row>\r\n        <Col sm={2}>\r\n          <Switch size=\"sm\" />\r\n        </Col>\r\n        <Col sm={2}>\r\n          <Switch />\r\n        </Col>\r\n        <Col sm={2}>\r\n          <Switch size=\"lg\" />\r\n        </Col>\r\n      </Row>\r\n    );\r\n  }\r\n}\r\n\r\n\r\n", "desc": " 通过`size`属性控制开关的大小" }, { "example": _react2['default'].createElement(Demo3, null), "title": " 事件开关", "code": "/**\r\n *\r\n * @title 事件开关\r\n * @description 点击开关触发事件\r\n *\r\n */\r\n\r\nimport React, { Component } from \"react\";\r\n\nimport { Switch,  Row, Col  } from 'tinper-bee';\r\n\r\nclass Demo3 extends Component {\r\n  constructor(props) {\r\n    super(props);\r\n    this.state = {\r\n      switch: \"\",\r\n      checked: false\r\n    };\r\n  }\r\n  onChange = e => {\r\n    this.setState({\r\n      switch: `${e}`,\r\n      checked: !this.state.checked\r\n    });\r\n  };\r\n\r\n  render() {\r\n    return (\r\n      <Row>\r\n        <Col sm={2}>\r\n          <Switch\r\n            checked={this.state.checked}\r\n            onChange={this.onChange}\r\n            checkedChildren={\"on\"}\r\n            unCheckedChildren={\"off\"}\r\n          />\r\n        </Col>\r\n        <Col sm={2}>\r\n          <span>{this.state.switch}</span>\r\n        </Col>\r\n      </Row>\r\n    );\r\n  }\r\n}\r\n\r\n\r\n", "desc": " 点击开关触发事件" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 被禁用开关", "code": "/**\r\n *\r\n * @title 被禁用开关\r\n * @description\r\n *\r\n */\r\nimport React, { Component } from \"react\";\r\n\nimport { Switch,  Row, Col  } from 'tinper-bee';\r\n\r\nclass Demo4 extends Component {\r\n  constructor(props) {\r\n    super(props);\r\n    this.state = {\r\n        defaultDisabled: true\r\n    };\r\n  }\r\n  onChange = () => {\r\n    this.setState({\r\n      defaultDisabled: !this.state.defaultDisabled\r\n    });\r\n  };\r\n  onConsoleLog=(x)=>{\r\n    console.log(x) \r\n  }\r\n  render() {\r\n    return (\r\n      <Row>\r\n        <Col sm={2}>\r\n          <Switch disabled={this.state.defaultDisabled}/>\r\n        </Col>\r\n        <Col sm={2}>\r\n          <button onClick={this.onChange}>toggle disabled</button>\r\n        </Col>\r\n      </Row>\r\n    );\r\n  }\r\n}\r\n\r\n\r\n", "desc": "" }];
+	var Demo1 = __webpack_require__(84);var Demo2 = __webpack_require__(87);var Demo3 = __webpack_require__(88);var Demo4 = __webpack_require__(89);var DemoArray = [{ "example": _react2['default'].createElement(Demo1, null), "title": " 默认开关", "code": "/**\r\n *\r\n * @title 默认开关\r\n * @description\r\n *\r\n */\r\nimport React, { Component } from \"react\";\r\n\nimport { Switch,  Row, Col  } from 'tinper-bee';\r\n\r\nclass Demo1 extends Component {\r\n  constructor(props) {\r\n    super(props);\r\n    this.state = {\r\n      checked: true\r\n    };\r\n  }\r\n  onChange = () => {\r\n    this.setState({\r\n      checked: !this.state.checked\r\n    });\r\n  };\r\n  render() {\r\n    return (\r\n      <Row>\r\n        <Col sm={2}>\r\n          <Switch />\r\n        </Col>\r\n        <Col sm={2}>\r\n          <Switch\r\n            checked={this.state.checked}\r\n            onChange={this.onChange}\r\n          />\r\n        </Col>\r\n      </Row>\r\n    );\r\n  }\r\n}\r\n\r\n\r\n", "desc": "" }, { "example": _react2['default'].createElement(Demo2, null), "title": " 不同大小的开关", "code": "/**\r\n *\r\n * @title 不同大小的开关\r\n * @description 通过`size`属性控制开关的大小\r\n *\r\n */\r\n\r\nimport React, { Component } from \"react\";\r\n\nimport { Switch,  Row, Col  } from 'tinper-bee';\r\n\r\nclass Demo2 extends Component {\r\n  render() {\r\n    return (\r\n      <Row>\r\n        <Col sm={2}>\r\n          <Switch size=\"sm\" />\r\n        </Col>\r\n        <Col sm={2}>\r\n          <Switch />\r\n        </Col>\r\n        <Col sm={2}>\r\n          <Switch size=\"lg\" />\r\n        </Col>\r\n      </Row>\r\n    );\r\n  }\r\n}\r\n\r\n\r\n", "desc": " 通过`size`属性控制开关的大小" }, { "example": _react2['default'].createElement(Demo3, null), "title": " 事件开关", "code": "/**\r\n *\r\n * @title 事件开关\r\n * @description 点击开关触发事件\r\n *\r\n */\r\n\r\nimport React, { Component } from \"react\";\r\n\nimport { Switch,  Row, Col  } from 'tinper-bee';\r\n\r\nclass Demo3 extends Component {\r\n  constructor(props) {\r\n    super(props);\r\n    this.state = {\r\n      switch: \"\",\r\n      checked: false\r\n    };\r\n  }\r\n  onChange = e => {\r\n    this.setState({\r\n      switch: `${e}`,\r\n      checked: !this.state.checked\r\n    });\r\n  };\r\n\r\n  render() {\r\n    return (\r\n      <Row>\r\n        <Col sm={2}>\r\n          <Switch\r\n            checked={this.state.checked}\r\n            onChange={this.onChange}\r\n            checkedChildren={\"on\"}\r\n            unCheckedChildren={\"off\"}\r\n          />\r\n        </Col>\r\n        <Col sm={2}>\r\n          <span>{this.state.switch}</span>\r\n        </Col>\r\n      </Row>\r\n    );\r\n  }\r\n}\r\n\r\n\r\n", "desc": " 点击开关触发事件" }, { "example": _react2['default'].createElement(Demo4, null), "title": " 被禁用开关", "code": "/**\r\n *\r\n * @title 被禁用开关\r\n * @description\r\n *\r\n */\r\nimport React, { Component } from \"react\";\r\n\nimport { Switch, Button,  Row, Col  } from 'tinper-bee';\r\n\n\r\nclass Demo4 extends Component {\r\n  constructor(props) {\r\n    super(props);\r\n    this.state = {\r\n        defaultDisabled: true\r\n    };\r\n  }\r\n  onChange = () => {\r\n    this.setState({\r\n      defaultDisabled: !this.state.defaultDisabled\r\n    });\r\n  };\r\n  onConsoleLog=(x)=>{\r\n    console.log(x) \r\n  }\r\n  render() {\r\n    return (\r\n      <Row>\r\n        <Col sm={2}>\r\n          <Switch disabled={this.state.defaultDisabled}/>\r\n        </Col>\r\n        <Col sm={2}>\r\n          <Button onClick={this.onChange}>toggle disabled</Button>\r\n        </Col>\r\n      </Row>\r\n    );\r\n  }\r\n}\r\n\r\n\r\n", "desc": "" }];
 	
 	var Demo = function (_Component) {
 	    _inherits(Demo, _Component);
@@ -2119,7 +2119,10 @@
 	  }
 	
 	  return (0, _createChainableTypeChecker2.default)(allPropTypes);
-	}
+	} /**
+	   * This source code is quoted from rc-util.
+	   * homepage: https://github.com/react-component/util
+	   */
 
 /***/ }),
 /* 29 */
@@ -2139,6 +2142,10 @@
 	 */
 	
 	// Mostly taken from ReactPropTypes.
+	
+	/* This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	
 	function createChainableTypeChecker(validate) {
 	  function checkType(isRequired, props, propName, componentName, location, propFullName) {
@@ -2174,7 +2181,11 @@
 	
 	exports.__esModule = true;
 	
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /**
+	                                                                                                                                                                                                                                                                               * This source code is quoted from rc-util.
+	                                                                                                                                                                                                                                                                               * homepage: https://github.com/react-component/util
+	                                                                                                                                                                                                                                                                               */
+	
 	
 	var _react = __webpack_require__(4);
 	
@@ -2218,8 +2229,10 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var warned = {};
-	
+	var warned = {}; /**
+	                  * This source code is quoted from rc-util.
+	                  * homepage: https://github.com/react-component/util
+	                  */
 	function deprecated(validator, reason) {
 	  return function validate(props, propName, componentName, location, propFullName) {
 	    var componentNameSafe = componentName || '<<anonymous>>';
@@ -2514,7 +2527,11 @@
 	
 	exports.__esModule = true;
 	
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /**
+	                                                                                                                                                                                                                                                                               * This source code is quoted from rc-util.
+	                                                                                                                                                                                                                                                                               * homepage: https://github.com/react-component/util
+	                                                                                                                                                                                                                                                                               */
+	
 	
 	var _react = __webpack_require__(4);
 	
@@ -2551,6 +2568,10 @@
 	
 	exports.__esModule = true;
 	exports.default = isRequiredForA11y;
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	function isRequiredForA11y(validator) {
 	  return function validate(props, propName, componentName, location, propFullName) {
 	    var componentNameSafe = componentName || '<<anonymous>>';
@@ -2576,6 +2597,10 @@
 	
 	exports.__esModule = true;
 	exports.default = splitComponentProps;
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	function _objectEntries(obj) {
 	  var entries = [];
 	  var keys = Object.keys(obj);
@@ -2618,6 +2643,10 @@
 	'use strict';
 	
 	exports.__esModule = true;
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	function createChainedFunction() {
 	  for (var _len = arguments.length, funcs = Array(_len), _key = 0; _key < _len; _key++) {
 	    funcs[_key] = arguments[_key];
@@ -2650,6 +2679,10 @@
 /* 38 */
 /***/ (function(module, exports) {
 
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	'use strict';
 	
 	/**
@@ -3179,6 +3212,10 @@
 	
 	exports.__esModule = true;
 	exports.default = contains;
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	function contains(root, n) {
 	  var node = n;
 	  while (node) {
@@ -3210,6 +3247,10 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	function addEventListenerWrap(target, eventType, cb) {
 	  /* eslint camelcase: 2 */
 	  var callback = _reactDom2.default.unstable_batchedUpdates ? function run(e) {
@@ -3729,7 +3770,11 @@
 	
 	exports.__esModule = true;
 	
-	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; /**
+	                                                                                                                                                                                                                                                                               * This source code is quoted from rc-util.
+	                                                                                                                                                                                                                                                                               * homepage: https://github.com/react-component/util
+	                                                                                                                                                                                                                                                                               */
+	
 	
 	var _Event = __webpack_require__(46);
 	
@@ -3920,6 +3965,10 @@
 	'use strict';
 	
 	exports.__esModule = true;
+	/**
+	 * This source code is quoted from rc-util.
+	 * homepage: https://github.com/react-component/util
+	 */
 	var EVENT_NAME_MAP = {
 	  transitionend: {
 	    transition: 'transitionend',
@@ -4233,7 +4282,10 @@
 	    ret.push(c);
 	  });
 	  return ret;
-	}
+	} /**
+	   * This source code is quoted from rc-util.
+	   * homepage: https://github.com/react-component/util
+	   */
 
 /***/ }),
 /* 50 */
@@ -4269,7 +4321,11 @@
 	
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * This source code is quoted from rc-util.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * homepage: https://github.com/react-component/util
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	
 	
 	//import isWindow from './isWindow';
 	
@@ -7799,7 +7855,7 @@
 	    /**
 	     * @title 尺寸
 	     */
-	    size: _propTypes2["default"].oneOf(['sm', 'xg', 'lg']),
+	    size: _propTypes2["default"].oneOf(['sm', 'md', 'xg', 'lg']),
 	    /**
 	     * @title 样式
 	     */
@@ -7813,7 +7869,7 @@
 	    /**
 	    * @title 类型
 	    */
-	    colors: _propTypes2["default"].oneOf(['primary', 'accent', 'success', 'info', 'warning', 'danger', 'default']),
+	    colors: _propTypes2["default"].oneOf(['primary', 'secondary', 'accent', 'success', 'info', 'warning', 'danger', 'dark', 'light', 'default']),
 	    /**
 	     * @title 是否禁用
 	     * @veIgnore
@@ -7843,16 +7899,20 @@
 	
 	var sizeMap = {
 	    sm: 'sm',
+	    md: 'md',
 	    xg: 'xg',
 	    lg: 'lg'
 	},
 	    colorsMap = {
 	    primary: 'primary',
+	    secondary: 'secondary',
 	    accent: 'accent',
 	    success: 'success',
 	    info: 'info',
 	    warning: 'warning',
-	    danger: 'danger'
+	    danger: 'danger',
+	    dark: 'dark',
+	    light: 'light'
 	},
 	    shapeMap = {
 	    block: 'block',
@@ -8399,6 +8459,10 @@
 	
 	var _src2 = _interopRequireDefault(_src);
 	
+	var _beeButton = __webpack_require__(82);
+	
+	var _beeButton2 = _interopRequireDefault(_beeButton);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 	
 	function _defaults(obj, defaults) { var keys = Object.getOwnPropertyNames(defaults); for (var i = 0; i < keys.length; i++) { var key = keys[i]; var value = Object.getOwnPropertyDescriptor(defaults, key); if (value && value.configurable && obj[key] === undefined) { Object.defineProperty(obj, key, value); } } return obj; }
@@ -8452,7 +8516,7 @@
 	        _beeLayout.Col,
 	        { sm: 2 },
 	        _react2["default"].createElement(
-	          "button",
+	          _beeButton2["default"],
 	          { onClick: this.onChange },
 	          "toggle disabled"
 	        )

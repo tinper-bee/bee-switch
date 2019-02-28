@@ -7,6 +7,7 @@
 import React, { Component } from "react";
 import { Row, Col } from "bee-layout";
 import Switch from "../../src";
+import Button from "bee-button";
 
 class Demo4 extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class Demo4 extends Component {
           <Switch disabled={this.state.defaultDisabled}/>
         </Col>
         <Col sm={2}>
-          <button onClick={this.onChange}>toggle disabled</button>
+          <Button onClick={this.onChange}>toggle disabled</Button>
         </Col>
       </Row>
     );
