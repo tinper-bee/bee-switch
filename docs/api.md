@@ -33,7 +33,16 @@ import 'bee-switch/build/Switch.css';
 |size|	大小设置，oneOf：`sm`, `lg`|string|''|
 |colors| 颜色设置，oneOf：`primary`,`success`,`info`,`dark`,`warning`''|	string	|''|
 |onKeyDown| 键盘回调 |	Function	| - |
+|enterKeyDown| 是否启用 enter 和 space 键 | Boolean | true |
 
+## 已支持的键盘操作
+
+|按键|功能|
+|:---|:----|
+|←(左箭)	|关闭开关|
+|→(右箭)	|打开开关|
+|enter	    |选中|
+|space	|选中|
 
 ## 注意事项
 
